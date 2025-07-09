@@ -1,0 +1,34 @@
+Test-Command: debian/tests/windows i686
+Features:
+ test-name=win32,
+Depends:
+ gcc-mingw-w64-i686,
+ gpgrt-tools,
+ libgpg-error-dev,
+ libgpg-error-mingw-w64-dev,
+ pkg-config,
+ wine32,
+Restrictions:
+ allow-stderr,
+Architecture: i386
+
+Test-Command: debian/tests/windows x86_64
+Features:
+ test-name=win64,
+Depends:
+ gcc-mingw-w64-x86-64,
+ gpgrt-tools,
+ libgpg-error-dev,
+ libgpg-error-mingw-w64-dev,
+ pkg-config,
+ wine64,
+Restrictions:
+ allow-stderr,
+Architecture: amd64
+
+Tests:
+ build,
+Depends:
+ build-essential,
+ libgpg-error-dev,
+ pkg-config,
