@@ -59,7 +59,7 @@ beta.
  
      echo "$package-$vers$tmp:$beta:$ingit:$vers$tmp:$vers:$tmp:$rev:$rvd:$cid:"
      exit 0
-@@ -475,48 +448,6 @@ EOF
+@@ -475,50 +448,6 @@ EOF
      die_p
  fi
  
@@ -70,7 +70,8 @@ beta.
 -  if cp --version >/dev/null 2>/dev/null; then
 -    [ -z "${SILENT}" ] && CP="$CP -v"
 -  fi
--  if [ -f .git/hooks/pre-commit.sample -a ! -f .git/hooks/pre-commit ] ; then
+-  if [ -f .git/hooks/pre-commit.sample ] \
+-      && [ ! -f .git/hooks/pre-commit ]; then
 -    [ -z "${SILENT}" ] && cat <<EOF
 -*** Activating trailing whitespace git pre-commit hook. ***
 -    For more information see this thread:
@@ -92,7 +93,8 @@ beta.
 -        "awk '/^\"POT-Creation-Date:/&&!s{s=1;next};!/^#: /{print}'"
 -    fi
 -  fi
--  if [ -f build-aux/git-hooks/commit-msg -a ! -f .git/hooks/commit-msg ] ; then
+-  if [ -f build-aux/git-hooks/commit-msg ] \
+-     && [ ! -f .git/hooks/commit-msg ]; then
 -      [ -z "${SILENT}" ] && cat <<EOF
 -*** Activating commit log message check hook. ***
 -EOF
