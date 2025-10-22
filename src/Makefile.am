@@ -40,6 +40,7 @@ lock_obj_pub = \
         syscfg/lock-obj-pub.aarch64-unknown-linux-gnu_ilp32.h \
 	syscfg/lock-obj-pub.aarch64-apple-darwin.h          \
         syscfg/lock-obj-pub.alpha-unknown-linux-gnu.h       \
+        syscfg/lock-obj-pub.aarch64-unknown-linux-androideabi.h \
         syscfg/lock-obj-pub.arm-unknown-linux-androideabi.h \
         syscfg/lock-obj-pub.arm-unknown-linux-gnueabi.h     \
 	syscfg/lock-obj-pub.arm-apple-darwin.h              \
@@ -47,6 +48,7 @@ lock_obj_pub = \
 	syscfg/lock-obj-pub.i386-apple-darwin.h             \
         syscfg/lock-obj-pub.i686-unknown-gnu.h              \
         syscfg/lock-obj-pub.i686-unknown-kfreebsd-gnu.h     \
+        syscfg/lock-obj-pub.i686-unknown-linux-androideabi.h \
         syscfg/lock-obj-pub.i686-unknown-linux-gnu.h        \
         syscfg/lock-obj-pub.m68k-unknown-linux-gnu.h        \
         syscfg/lock-obj-pub.mips-unknown-linux-gnu.h        \
@@ -69,6 +71,7 @@ lock_obj_pub = \
 	syscfg/lock-obj-pub.x86_64-apple-darwin.h           \
         syscfg/lock-obj-pub.x86_64-unknown-gnu.h              \
         syscfg/lock-obj-pub.x86_64-unknown-kfreebsd-gnu.h   \
+        syscfg/lock-obj-pub.x86_64-unknown-linux-androideabi.h \
         syscfg/lock-obj-pub.x86_64-unknown-linux-gnu.h      \
         syscfg/lock-obj-pub.x86_64-unknown-linux-gnux32.h   \
         syscfg/lock-obj-pub.x86_64-unknown-linux-musl.h     \
@@ -275,7 +278,8 @@ errnos-sym.h: Makefile mkstrtable.awk errnos.in
 
 mkheader$(EXEEXT_FOR_BUILD): mkheader.c Makefile
 	$(CC_FOR_BUILD) $(CFLAGS_FOR_BUILD) $(LDFLAGS_FOR_BUILD) \
-	$(CPPFLAGS_FOR_BUILD) -g -I. -I$(srcdir) -o $@ $(srcdir)/mkheader.c
+	$(CPPFLAGS_FOR_BUILD) -g -I. -I$(srcdir) \
+        -o $@ $(srcdir)/mkheader.c $(EXTRA_LIBS_FOR_BUILD)
 
 parts_of_gpg_error_h = 	 	\
 	gpg-error.h.in  	\

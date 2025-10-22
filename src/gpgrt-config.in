@@ -247,15 +247,15 @@ list_only_once_for_libs () {
 }
 
 arg1_is_same () {
-    [ "$1" = "=" -o "$1" = ">=" -o "$1" = "<=" ]
+    [ "$1" = "=" ] || [ "$1" = ">=" ] || [ "$1" = "<=" ]
 }
 
 arg1_is_less () {
-    [ "$1" = "!=" -o "$1" = "<" -o "$1" = "<=" ]
+    [ "$1" = "!=" ] || [ "$1" = "<" ] || [ "$1" = "<=" ]
 }
 
 arg1_is_great () {
-    [ "$1" = "!=" -o "$1" = ">" -o "$1" = ">=" ]
+    [ "$1" = "!=" ] || [ "$1" = ">" ] || [ "$1" = ">=" ]
 }
 
 #
@@ -270,7 +270,7 @@ eval_compare_version () {
     ___chunk1=""
     ___chunk2=""
 
-    while [ -n "$___str1" -a -n "$___str2" ]; do
+    while [ -n "$___str1" ] && [ -n "$___str2" ]; do
 	# Trim anything that's not alnum or tilde from the front
 	___str1="$(expr "$___str1" : '[^0-9A-Za-z~]*\(.*\)')"
 	___str2="$(expr "$___str2" : '[^0-9A-Za-z~]*\(.*\)')"
@@ -279,7 +279,7 @@ eval_compare_version () {
 	___char1=${___str1%${___str1#?}}
 	___char2=${___str2%${___str2#?}}
 
-	if [ "$___char1" = ~ -o "$___char2" = ~ ]; then
+	if [ "$___char1" = ~ ] || [ "$___char2" = ~ ]; then
 	    if [ "$___char1" != ~ ]; then
 		arg1_is_great $___cmp
 		return
@@ -293,7 +293,7 @@ eval_compare_version () {
 	    continue
 	fi
 
-	if [ -z "$___char1" -o -z "$___char2" ]; then
+	if [ -z "$___char1" ] || [ -z "$___char2" ]; then
 	    break
 	fi
 
@@ -467,7 +467,7 @@ determine_gpgrt_libdir () {
     #   Debian style: /usr/lib/<multiarch-name>
     #   Fedora/openSUSE style: /usr/lib, /usr/lib32 or /usr/lib64
     # It is assumed that CC is specified to the one of host on cross build.
-    if libdir_candidates=$(${CC:-cc} -print-search-dirs | \
+    if libdir_candidates=$(${CC:-gcc} -print-search-dirs | \
           sed -n -e "/^libraries/{s/libraries: =//;s/:/\\
 /g;p;}"); then
       # From the output of -print-search-dirs, select valid pkgconfig dirs.
@@ -691,18 +691,18 @@ for p in $PKG_LIST; do
     cleanup_vars_attrs
 done
 
-if [ -z "$want_var" -a -z "$want_attr" ]; then
+if [ -z "$want_var" ] && [ -z "$want_attr" ]; then
     if [ -n "$want_cflags" ]; then
 	output="$output${output:+ }$(sysroot -I $(list_only_once $cflags))"
 	# Backward compatibility to old gpg-error-config
-	if [ $mt = yes -a -n "$mtcflags" ]; then
+	if [ $mt = yes ] && [ -n "$mtcflags" ]; then
 	    output="$output${output:+ }$mtcflags"
 	fi
     fi
     if [ -n "$want_libs" ]; then
 	output="$output${output:+ }$(sysroot -L $(list_only_once_for_libs $libs))"
 	# Backward compatibility to old gpg-error-config
-	if [ $mt = yes -a -n "$mtlibs" ]; then
+	if [ $mt = yes ] && [ -n "$mtlibs" ]; then
 	    output="$output${output:+ }$mtlibs"
 	fi
     fi

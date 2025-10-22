@@ -1,3 +1,219 @@
+2025-10-07  Werner Koch  <wk@gnupg.org>
+
+	Release 1.56.
+	+ commit b3b68bde07b02dd2b6d78356ac90baa652a309fa
+
+
+	estream: Implictly enable sysopen when the the share flag is given.
+	+ commit 461cb5a8ea24785ef4f8c5282e09e69bf487fa7f
+	* src/estream.c (parse_mode): Fix parsing of "share". Set sysopen
+	flag.
+
+	estream: Extend the new share keyword to allow all modes.
+	+ commit 0b170a499a87abc4a18b6f7d76beb44901fa0cdd
+	* src/estream.c (X_SHARE_RW): Replace by ...
+	(X_SHARE_CUSTOM,X_SHARE_READ,X_SHARE_WRITE,X_SHARE_DEL): new.
+	(func_file_create_w32): Set share_mode accordingly.
+	(parse_mode): Extend the "share" keyword.
+
+	* src/gpg-error.c (main): Add option --openmode to allow testing of
+	the share modes.
+
+2025-10-03  NIIBE Yutaka  <gniibe@fsij.org>
+
+	Update copyright and version string in gpg-error.m4.
+	+ commit 413b65f34fd1d58ae879412bfa248521ff284b3c
+	* src/gpg-error.m4: Update.
+
+2025-10-02  Werner Koch  <wk@gnupg.org>
+
+	estream: New mode keyword "share=rw".
+	+ commit 2344947717d29170c918a195541db568648c7aa3
+	* src/estream.c (X_SAMETHREAD): Move to the top.  Also for the other
+	 X_constants.
+	(_gpgrt_fopen): Move setting of FILE_FLAG_SEQUENTIAL_SCAN to ...
+	(func_file_create_w32): here. Replace arg flags_and_attrs by xflags
+	and use cflags to set certain properties.
+	(parse_mode): Add mode keyword "share=rw".
+
+2025-09-24  NIIBE Yutaka  <gniibe@fsij.org>
+
+	Also fix for test(1) operator -o.
+	+ commit a51f30e923670040136dbf68f2a4275f586d129a
+	* autogen.sh: Don't use -o operator, but shell ||.
+	* src/gpgrt-config.in: Likewise.
+
+2025-09-23  Werner Koch  <wk@gnupg.org>
+
+	Fixes for obsoleted/removed test(1) operator -a.
+	+ commit 6344dd1cad8f44b9a6ab39570795479e32bf7058
+	* autogen.sh: Here.
+	* configure.ac: And here.
+	* src/gen-lock-obj.sh: And here.
+	* src/gpg-error.m4 (AM_PATH_GPG_ERROR): And here.
+	* src/gpgrt-config.in (eval_compare_version): And here.
+	* src/gpgrt.m4 (AM_PATH_GPGRT): And here.
+
+	Silence warnings when enabling the trace functions.
+	+ commit 3cf07222264c1966333429280059dfed917b36e9
+	* src/w32-estream.c (reader): Use correct printf format specifiers for
+	the trace functions.
+
+2025-09-23  NIIBE Yutaka  <gniibe@fsij.org>
+
+	w32: Don't convert slash->backslash when it's under Wine.
+	+ commit 0313b660f8bd4e82ec8af6da593d745b9e658ce8
+	* src/sysutils.c (_gpgrt_fname_to_wchar): No change under Wine.
+
+	w32:spawn: Fix thread-unfriendly internal check.
+	+ commit 00a40c0c599fb439facf1af55495d7ca1e496683
+	* src/gpgrt-int.h (_gpgrt_windows_feature): New.
+	* src/init.c (windows_specific_init): New.
+	(real_init) [HAVE_W32_SYSTEM]: Call windows_specific_init.
+	(_gpgrt_windows_feature): New.
+	* src/spawn-w32.c (check_windows_version): Remove.
+	(_gpgrt_process_spawn): Use _gpgrt_windows_feature.
+
+2025-08-14  Werner Koch  <wk@gnupg.org>
+
+	estream: Support the %b conversion specifier from C23.
+	+ commit 6ac5332e4f6988112f4272cfe7a2eee31173ff3f
+	* src/estream-printf.c (CONSSPEC_BIN): New.
+	(compute_type): Handle it.
+	(parse_format): Support 'b'.
+	(do_format): Divert 'b' to pr_integer.
+	(pr_integer): Print binary format.
+
+	* tests/t-printf.c (check_fprintf_sf): Add two simple testcases.
+
+	Set build specific variable for zOS.
+	+ commit 7ee191f54c2a830767207fb6563380a87f60ddf0
+	* configure.ac (EXTRA_LIBS_FOR_BUILD): New ac_subst.
+	* src/Makefile.am (mkheader): Append that var to the rule.
+
+2025-07-20  Ben Kibbey  <bjk@luxsci.net>
+
+	syscfg: Add x86_64 Android arch.
+	+ commit c6eacfae7c067149b08d07f2cadf2da14f888de5
+	* src/syscfg/lock-obj-pub.x86_64-unknown-linux-androideabi.h: New.
+	* src/Makefile.am (lock_obj_pub): Add it.
+
+	syscfg: Add i686 Android arch.
+	+ commit 7e05d3bda6ad10d564d151fa2c4c4939aa8892d4
+	* src/syscfg/lock-obj-pub.i686-unknown-linux-androideabi.h: New.
+	* src/Makefile.am (lock_obj_pub): Add it.
+
+	syscfg: Add armv7a alias to arm for Android.
+	+ commit 5caa2a6944ec12593a12aba772cfde5efc73b019
+	* src/mkheader.c (canon_host_triplet): Add alias.
+
+	syscfg: Add 64-bit Android arch.
+	+ commit 587287c4a735b68ff3405ffcd2ea02da4ca82282
+	* src/syscfg/lock-obj-pub.aarch64-unknown-linux-androideabi.h: New.
+	* src/Makefile.am (lock_obj_pub): Add it.
+
+2025-07-16  NIIBE Yutaka  <gniibe@fsij.org>
+
+	w32:spawn: Support pipe I/O for GPGRT_PROCESS_DETACHED.
+	+ commit 8a38d914512ca928ffa5c79199bd410c9324e0e6
+	* src/spawn-w32.c (struct gpgrt_spawn_actions): Add detached field.
+	(spawn_detached): Merge into ...
+	(_gpgrt_process_spawn): ... here, supporting pipe I/O.
+	(_gpgrt_process_release): Handle detached process.
+	(_gpgrt_process_wait_list): Likewise.
+
+2025-07-15  NIIBE Yutaka  <gniibe@fsij.org>
+
+	w32:spawn: New flag GPGRT_PROCESS_STDIO_NUL.
+	+ commit 311fb769d1ddb1aa6d7463b5b516359afebf208a
+	* src/gpg-error.h.in (GPGRT_PROCESS_STDIO_NUL): New.
+	* src/spawn-w32.c (w32_open_null): Add ENABLE_NULL_DEVICE argument.
+	(_gpgrt_process_spawn): Follow the change.
+
+	w32:spawn: Fix resource leaks for HANDLEs by w32_open_null.
+	+ commit f28bf71b86ba6eac4260084f3a164a5c273c4628
+	* src/spawn-w32.c (_gpgrt_process_spawn): Don't modify hd fields in
+	ACT.  Clean up use of hd_in, hd_out, and hd_err.
+
+2025-07-14  NIIBE Yutaka  <gniibe@fsij.org>
+
+	w32:spawn: Fix inheriting HANDLEs.
+	+ commit 0b01950237abe1cc28ef1fa5459e20c300af0946
+	* src/spawn-w32.c (spawn_detached): Use EXTENDED_STARTUPINFO_PRESENT
+	to enable lpAttributeList in STARTUPINFOEXW.
+	(_gpgrt_process_spawn): Likewise.
+
+2025-07-02  NIIBE Yutaka  <gniibe@fsij.org>
+
+	gpgrt-config: It's gcc which supports -print-search-dirs option.
+	+ commit cac7168088147a4d308b5ae7482135bc00db9f69
+	* src/gpgrt-config.in (determine_gpgrt_libdir): Default to gcc.
+
+2025-07-01  NIIBE Yutaka  <gniibe@fsij.org>
+
+	spawn: Define _GPGRT_NEED_AFLOCAL for OS without AF_LOCAL.
+	+ commit dffca928fbc94dd738c8a118eb64e0889441c077
+	* src/spawn-posix.c (_GPGRT_NEED_AFLOCAL): Add.
+
+2025-06-26  NIIBE Yutaka  <gniibe@fsij.org>
+
+	spawn:posix: Use 1024 for arbitrary limit, following GPGME.
+	+ commit 6cb61bb9cb552c430cc3a466ee056df5ed5a06e1
+	* src/spawn-posix.c (get_max_fds): Use 1024 (was: 256).
+
+	spawn:posix: Add an improvement when closefrom is not available.
+	+ commit d302aff1eff1c51240007a75a1b2d7c08b326055
+	* src/gpgrt-int.h (_gpgrt_close_all_fds): Fix function declaration.
+	* src/spawn-posix.c (USE_GET_MAX_FDS): Define when closefrom is not
+	available.
+	(get_max_fds): Add an argument of FALLBACK_MAX_FDS.
+	(_gpgrt_close_all_fds, my_exec, spawn_detached): Likewise.
+	(_gpgrt_process_spawn): [USE_GET_MAX_FDS && _SC_OPEN_MAX]: It's a
+	parent process which calls sysconf.
+
+	posix:spawn: Use getdents64 when closefrom is not available.
+	+ commit 9cc016c38df1531d6081317bfcc7ea705172e2ac
+	* configure.ac (AC_CHECK_FUNCS): Check getdents64.
+	* src/spawn-posix.c [!HAVE_CLOSEFROM] (get_max_fds): Use getdents64
+	instead of readdir, for AS-Safety.
+
+2025-06-23  NIIBE Yutaka  <gniibe@fsij.org>
+
+	spawn:posix: Fix spawning a process on POSIX machine.
+	+ commit 2c029e737e88494038b5143f1232b458977f31d4
+	* src/spawn-posix.c (get_max_fds): Don't use _POSIX_OPEN_MAX, since
+	it's irrelevant;  It's a minimum value of OPEN_MAX.
+
+2025-06-16  Werner Koch  <wk@gnupg.org>
+
+	w32: Allow building on Windows with gcc < 12.
+	+ commit 1d4e09c9b1b184d0369a90c2adacab8f197310f6
+	* src/spawn-w32.c (_WIN32_WINNT): Define.
+
+2025-06-10  Collin Funk via Gnupg-devel  <gnupg-devel@gnupg.org>
+
+	argparse: Remove a duplicated condition.
+	+ commit 0cee6a44f8a22c8a015115bd5567e25e207cdbfe
+	* src/argparse.c (emulated_registry_lookup): Remove duplicated
+	condition.
+
+2025-05-28  Werner Koch  <wk@gnupg.org>
+
+	libtool: Add support for zOS.
+	+ commit c42825f1612b13c27c2472c4190d64655891078b
+	* m4/libtool.m4: Add casefor  openedition.
+
+2025-05-28  NIIBE Yutaka  <gniibe@fsij.org>
+
+	argparse: Fix a memory leak.
+	+ commit ba7ed54668e4d7baea563f8b94cc887a41642f8d
+	* src/argparse.c (handle_meta_echo): Free the STRING.
+
+	yat2m: Release the memory after the use.
+	+ commit 98d8f3d396b58d3086fd0416246908eba078917b
+	* doc/yat2m.c (add_content): Fix the type of LINE.
+	(finish_page): Clean up.
+
 2025-04-24  Werner Koch  <wk@gnupg.org>
 
 	Release 1.55.
