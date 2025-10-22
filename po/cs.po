@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgpg-error 1.42\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2025-04-24 16:08+0200\n"
+"POT-Creation-Date: 2025-10-07 17:35+0200\n"
 "PO-Revision-Date: 2021-10-15 21:07+02:00\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -983,918 +983,924 @@ msgid "Bad octal character in S-expression"
 msgstr "Chybný osmičkový znak v S-výrazu"
 
 #: src/err-codes.h:242
+#, fuzzy
+#| msgid "Unexpected tag"
+msgid "Unexpected packet"
+msgstr "Neočekávaná značka"
+
+#: src/err-codes.h:243
 msgid "All subkeys are expired or revoked"
 msgstr "Všem podklíčům skončila platnost nebo byly odvolány"
 
-#: src/err-codes.h:243
+#: src/err-codes.h:244
 msgid "Database is corrupted"
 msgstr "Databáze je poškozená"
 
-#: src/err-codes.h:244
+#: src/err-codes.h:245
 msgid "Server indicated a failure"
 msgstr "Server ohlásil selhání"
 
-#: src/err-codes.h:245
+#: src/err-codes.h:246
 msgid "No name"
 msgstr "Žádné jméno"
 
-#: src/err-codes.h:246
+#: src/err-codes.h:247
 msgid "No key"
 msgstr "Žádný klíč"
 
-#: src/err-codes.h:247
+#: src/err-codes.h:248
 msgid "Legacy key"
 msgstr "Zastaralý klíč"
 
-#: src/err-codes.h:248
+#: src/err-codes.h:249
 msgid "Request too short"
 msgstr "Požadavek je příliš krátký"
 
-#: src/err-codes.h:249
+#: src/err-codes.h:250
 msgid "Request too long"
 msgstr "Požadavek je příliš dlouhý"
 
-#: src/err-codes.h:250
+#: src/err-codes.h:251
 msgid "Object is in termination state"
 msgstr "Objekt je v konečném stavu"
 
-#: src/err-codes.h:251
+#: src/err-codes.h:252
 msgid "No certificate chain"
 msgstr "Chybí řetězec certifikátů"
 
-#: src/err-codes.h:252
+#: src/err-codes.h:253
 msgid "Certificate is too large"
 msgstr "Certifikát je příliš velký"
 
-#: src/err-codes.h:253
+#: src/err-codes.h:254
 msgid "Invalid record"
 msgstr "Neplatný záznam"
 
-#: src/err-codes.h:254
+#: src/err-codes.h:255
 msgid "The MAC does not verify"
 msgstr "Ověření MAC selhalo"
 
-#: src/err-codes.h:255
+#: src/err-codes.h:256
 msgid "Unexpected message"
 msgstr "Neočekávaná zpráva"
 
-#: src/err-codes.h:256
+#: src/err-codes.h:257
 msgid "Compression or decompression failed"
 msgstr "Komprese nebo dekomprese selhala"
 
-#: src/err-codes.h:257
+#: src/err-codes.h:258
 msgid "A counter would wrap"
 msgstr "Počítadlo by přeteklo"
 
-#: src/err-codes.h:258
+#: src/err-codes.h:259
 msgid "Fatal alert message received"
 msgstr "Přijata nepřekonatelná chybová zpráva"
 
-#: src/err-codes.h:259
+#: src/err-codes.h:260
 msgid "No cipher algorithm"
 msgstr "Žádný šifrovací algoritmus"
 
-#: src/err-codes.h:260
+#: src/err-codes.h:261
 msgid "Missing client certificate"
 msgstr "Chybí certifikát klienta"
 
-#: src/err-codes.h:261
+#: src/err-codes.h:262
 msgid "Close notification received"
 msgstr "Přijato oznámení o uzavření"
 
-#: src/err-codes.h:262
+#: src/err-codes.h:263
 msgid "Ticket expired"
 msgstr "Lístku vypršela platnost"
 
-#: src/err-codes.h:263
+#: src/err-codes.h:264
 msgid "Bad ticket"
 msgstr "Chybný lístek"
 
-#: src/err-codes.h:264
+#: src/err-codes.h:265
 msgid "Unknown identity"
 msgstr "Neznámá totožnost"
 
-#: src/err-codes.h:265
+#: src/err-codes.h:266
 msgid "Bad certificate message in handshake"
 msgstr "Chybná zpráva s certifikátem v zahájení"
 
-#: src/err-codes.h:266
+#: src/err-codes.h:267
 msgid "Bad certificate request message in handshake"
 msgstr "Chybná zpráva s požadavkem na certifikát v zahájení"
 
-#: src/err-codes.h:267
+#: src/err-codes.h:268
 msgid "Bad certificate verify message in handshake"
 msgstr "Chybná zpráva o ověření certifikátu v zahájení"
 
-#: src/err-codes.h:268
+#: src/err-codes.h:269
 msgid "Bad change cipher message in handshake"
 msgstr "Chybná zpráva se změnou šifry v zahájení"
 
-#: src/err-codes.h:269
+#: src/err-codes.h:270
 msgid "Bad client hello message in handshake"
 msgstr "Chybná zpráva s pozdravem klienta v zahájení"
 
-#: src/err-codes.h:270
+#: src/err-codes.h:271
 msgid "Bad server hello message in handshake"
 msgstr "Chybná zpráva s pozdravem serveru v zahájení"
 
-#: src/err-codes.h:271
+#: src/err-codes.h:272
 msgid "Bad server hello done message in handshake"
 msgstr "Chybná zpráva o dokončení pozdravu serveru v zahájení"
 
-#: src/err-codes.h:272
+#: src/err-codes.h:273
 msgid "Bad finished message in handshake"
 msgstr "Chybná zpráva o dokončení v zahájení"
 
-#: src/err-codes.h:273
+#: src/err-codes.h:274
 msgid "Bad server key exchange message in handshake"
 msgstr "Chybná zpráva o výměně klíče serveru v zahájení"
 
-#: src/err-codes.h:274
+#: src/err-codes.h:275
 msgid "Bad client key exchange message in handshake"
 msgstr "Chybná zpráva o výměně klíče klienta v zahájení"
 
-#: src/err-codes.h:275
+#: src/err-codes.h:276
 msgid "Bogus string"
 msgstr "Chybný řetězec"
 
-#: src/err-codes.h:276
+#: src/err-codes.h:277
 msgid "Forbidden"
 msgstr "Zakázán"
 
-#: src/err-codes.h:277
+#: src/err-codes.h:278
 msgid "Key disabled"
 msgstr "Klíč zakázán"
 
-#: src/err-codes.h:278
+#: src/err-codes.h:279
 msgid "Not possible with a card based key"
 msgstr "Nelze provést s klíčem na kartě"
 
-#: src/err-codes.h:279
+#: src/err-codes.h:280
 msgid "Invalid lock object"
 msgstr "Neplatný objekt zámku"
 
-#: src/err-codes.h:280
+#: src/err-codes.h:281
 msgid "True"
 msgstr "Pravda"
 
-#: src/err-codes.h:281
+#: src/err-codes.h:282
 msgid "False"
 msgstr "Nepravda"
 
-#: src/err-codes.h:282
+#: src/err-codes.h:283
 msgid "General IPC error"
 msgstr "Obecná chyba IPC"
 
-#: src/err-codes.h:283
+#: src/err-codes.h:284
 msgid "IPC accept call failed"
 msgstr "IPC volání accept (přijmout) selhalo"
 
-#: src/err-codes.h:284
+#: src/err-codes.h:285
 msgid "IPC connect call failed"
 msgstr "IPC volání connect (připojit) selhalo"
 
-#: src/err-codes.h:285
+#: src/err-codes.h:286
 msgid "Invalid IPC response"
 msgstr "Neplatná odpověď IPC"
 
-#: src/err-codes.h:286
+#: src/err-codes.h:287
 msgid "Invalid value passed to IPC"
 msgstr "Neplatná hodnota předaná do IPC"
 
-#: src/err-codes.h:287
+#: src/err-codes.h:288
 msgid "Incomplete line passed to IPC"
 msgstr "Neúplný řádek předán do IPC"
 
-#: src/err-codes.h:288
+#: src/err-codes.h:289
 msgid "Line passed to IPC too long"
 msgstr "Řádek předaný do IPC je příliš dlouhý"
 
-#: src/err-codes.h:289
+#: src/err-codes.h:290
 msgid "Nested IPC commands"
 msgstr "Vnořené příkazy IPC"
 
-#: src/err-codes.h:290
+#: src/err-codes.h:291
 msgid "No data callback in IPC"
 msgstr "Žádná data zpětného volání v IPC"
 
-#: src/err-codes.h:291
+#: src/err-codes.h:292
 msgid "No inquire callback in IPC"
 msgstr "Žádné dotazovací zpětné volání v IPC"
 
-#: src/err-codes.h:292
+#: src/err-codes.h:293
 msgid "Not an IPC server"
 msgstr "Není serverem IPC"
 
-#: src/err-codes.h:293
+#: src/err-codes.h:294
 msgid "Not an IPC client"
 msgstr "Není klientem IPC"
 
-#: src/err-codes.h:294
+#: src/err-codes.h:295
 msgid "Problem starting IPC server"
 msgstr "Problém se spuštěním serveru IPC"
 
-#: src/err-codes.h:295
+#: src/err-codes.h:296
 msgid "IPC read error"
 msgstr "Chyba čtení IPC"
 
-#: src/err-codes.h:296
+#: src/err-codes.h:297
 msgid "IPC write error"
 msgstr "Chyba zápisu IPC"
 
-#: src/err-codes.h:297
+#: src/err-codes.h:298
 msgid "Too much data for IPC layer"
 msgstr "Příliš mnoho data pro vrstvu IPC"
 
-#: src/err-codes.h:298
+#: src/err-codes.h:299
 msgid "Unexpected IPC command"
 msgstr "Neočekávaný příkaz IPC"
 
-#: src/err-codes.h:299
+#: src/err-codes.h:300
 msgid "Unknown IPC command"
 msgstr "Neznámý příkaz IPC"
 
-#: src/err-codes.h:300
+#: src/err-codes.h:301
 msgid "IPC syntax error"
 msgstr "Chyba syntaxe IPC"
 
-#: src/err-codes.h:301
+#: src/err-codes.h:302
 msgid "IPC call has been cancelled"
 msgstr "Volání IPC bylo zrušeno"
 
-#: src/err-codes.h:302
+#: src/err-codes.h:303
 msgid "No input source for IPC"
 msgstr "Žádný zdroj vstupu pro IPC"
 
-#: src/err-codes.h:303
+#: src/err-codes.h:304
 msgid "No output source for IPC"
 msgstr "Žádný zdroj výstupu pro IPC"
 
-#: src/err-codes.h:304
+#: src/err-codes.h:305
 msgid "IPC parameter error"
 msgstr "Chyba parametru IPC"
 
-#: src/err-codes.h:305
+#: src/err-codes.h:306
 msgid "Unknown IPC inquire"
 msgstr "Neznámý dotaz IPC"
 
-#: src/err-codes.h:306
+#: src/err-codes.h:307
 msgid "Crypto engine too old"
 msgstr "Kryptografická jednotka je příliš stará"
 
-#: src/err-codes.h:307
+#: src/err-codes.h:308
 msgid "Screen or window too small"
 msgstr "Obrazovka nebo okno je příliš malé"
 
-#: src/err-codes.h:308
+#: src/err-codes.h:309
 msgid "Screen or window too large"
 msgstr "Obrazovka nebo okno je příliš velké"
 
-#: src/err-codes.h:309
+#: src/err-codes.h:310
 msgid "Required environment variable not set"
 msgstr "Požadovaná proměnná prostředí není nastavena"
 
-#: src/err-codes.h:310
+#: src/err-codes.h:311
 msgid "User ID already exists"
 msgstr "ID uživatele již existuje"
 
-#: src/err-codes.h:311
+#: src/err-codes.h:312
 msgid "Name already exists"
 msgstr "Název již existuje"
 
-#: src/err-codes.h:312
+#: src/err-codes.h:313
 msgid "Duplicated name"
 msgstr "Zdvojený název"
 
-#: src/err-codes.h:313
+#: src/err-codes.h:314
 msgid "Object is too young"
 msgstr "Objekt je příliš mladý"
 
-#: src/err-codes.h:314
+#: src/err-codes.h:315
 msgid "Object is too old"
 msgstr "Objekt je příliš starý"
 
-#: src/err-codes.h:315
+#: src/err-codes.h:316
 msgid "Unknown flag"
 msgstr "Neznámý příznak"
 
-#: src/err-codes.h:316
+#: src/err-codes.h:317
 msgid "Invalid execution order"
 msgstr "Neplatné pořadí vykonávání"
 
-#: src/err-codes.h:317
+#: src/err-codes.h:318
 msgid "Already fetched"
 msgstr "Již staženo"
 
-#: src/err-codes.h:318
+#: src/err-codes.h:319
 msgid "Try again later"
 msgstr "Opakujte později"
 
-#: src/err-codes.h:319
+#: src/err-codes.h:320
 msgid "Wrong name"
 msgstr "Špatný název"
 
-#: src/err-codes.h:320
+#: src/err-codes.h:321
 msgid "Not authenticated"
 msgstr "Neautentizováno"
 
-#: src/err-codes.h:321
+#: src/err-codes.h:322
 msgid "Bad authentication"
 msgstr "Chybná autentizace"
 
-#: src/err-codes.h:322
+#: src/err-codes.h:323
 msgid "No Keybox daemon running"
 msgstr "Démon pro schránku na klíče neběží"
 
-#: src/err-codes.h:323
+#: src/err-codes.h:324
 msgid "Keybox daemon error"
 msgstr "Chyba démona pro schránku na klíče"
 
-#: src/err-codes.h:324
+#: src/err-codes.h:325
 msgid "Service is not running"
 msgstr "Služba neběží"
 
-#: src/err-codes.h:325
+#: src/err-codes.h:326
 msgid "Service error"
 msgstr "Chyba služby"
 
-#: src/err-codes.h:326
+#: src/err-codes.h:327
 #, fuzzy
 #| msgid "Bad PIN"
 msgid "Bad PUK"
 msgstr "Špatný PIN"
 
-#: src/err-codes.h:327
+#: src/err-codes.h:328
 msgid "No reset code"
 msgstr ""
 
-#: src/err-codes.h:328
+#: src/err-codes.h:329
 #, fuzzy
 #| msgid "Bad secret key"
 msgid "Bad reset code"
 msgstr "Chybný tajný klíč"
 
-#: src/err-codes.h:329
+#: src/err-codes.h:330
 msgid "System bug detected"
 msgstr "Objevena chyba systému"
 
-#: src/err-codes.h:330
+#: src/err-codes.h:331
 msgid "Unknown DNS error"
 msgstr "Neznámá chyba DNS"
 
-#: src/err-codes.h:331
+#: src/err-codes.h:332
 msgid "Invalid DNS section"
 msgstr "Neplatný oddíl DNS"
 
-#: src/err-codes.h:332
+#: src/err-codes.h:333
 msgid "Invalid textual address form"
 msgstr "Neplatná textová podoba adresy"
 
-#: src/err-codes.h:333
+#: src/err-codes.h:334
 msgid "Missing DNS query packet"
 msgstr "Chybí packet s dotazem DNS"
 
-#: src/err-codes.h:334
+#: src/err-codes.h:335
 msgid "Missing DNS answer packet"
 msgstr "Chybí packet s odpovědí DNS"
 
-#: src/err-codes.h:335
+#: src/err-codes.h:336
 msgid "Connection closed in DNS"
 msgstr "Spojení v DNS uzavřeno"
 
-#: src/err-codes.h:336
+#: src/err-codes.h:337
 msgid "Verification failed in DNS"
 msgstr "Ověřování v DNS selhalo"
 
-#: src/err-codes.h:337
+#: src/err-codes.h:338
 msgid "DNS Timeout"
 msgstr "Časový limit pro DNS vypršel"
 
-#: src/err-codes.h:338
+#: src/err-codes.h:339
 msgid "General LDAP error"
 msgstr "Obecná chyba LDAP"
 
-#: src/err-codes.h:339
+#: src/err-codes.h:340
 msgid "General LDAP attribute error"
 msgstr "Obecná chyba atributu LDAP"
 
-#: src/err-codes.h:340
+#: src/err-codes.h:341
 msgid "General LDAP name error"
 msgstr "Obecná chyba názvu LDAP"
 
-#: src/err-codes.h:341
+#: src/err-codes.h:342
 msgid "General LDAP security error"
 msgstr "Obecná chyba zabezpečení LDAP"
 
-#: src/err-codes.h:342
+#: src/err-codes.h:343
 msgid "General LDAP service error"
 msgstr "Obecná chyba služby LDAP"
 
-#: src/err-codes.h:343
+#: src/err-codes.h:344
 msgid "General LDAP update error"
 msgstr "Obecná chyba aktualizace LDAP"
 
-#: src/err-codes.h:344
+#: src/err-codes.h:345
 msgid "Experimental LDAP error code"
 msgstr "Experimentální chybový kód LDAP"
 
-#: src/err-codes.h:345
+#: src/err-codes.h:346
 msgid "Private LDAP error code"
 msgstr "Soukromý chybový kód LDAP"
 
-#: src/err-codes.h:346
+#: src/err-codes.h:347
 msgid "Other general LDAP error"
 msgstr "Jiná obecná chyba LDAP"
 
-#: src/err-codes.h:347
+#: src/err-codes.h:348
 msgid "LDAP connecting failed (X)"
 msgstr "Spojení LDAP selhalo (X)"
 
-#: src/err-codes.h:348
+#: src/err-codes.h:349
 msgid "LDAP referral limit exceeded"
 msgstr "Překročeno omezení na počet odkazů LDAP"
 
-#: src/err-codes.h:349
+#: src/err-codes.h:350
 msgid "LDAP client loop"
 msgstr "Smyčka klienta LDAP"
 
-#: src/err-codes.h:350
+#: src/err-codes.h:351
 msgid "No LDAP results returned"
 msgstr "Nevráceny žádné výsledky LDAP"
 
-#: src/err-codes.h:351
+#: src/err-codes.h:352
 msgid "LDAP control not found"
 msgstr "Ovládání LDAP nenalezeno"
 
-#: src/err-codes.h:352
+#: src/err-codes.h:353
 msgid "Not supported by LDAP"
 msgstr "Nepodporováno v LDAP"
 
-#: src/err-codes.h:353
+#: src/err-codes.h:354
 msgid "LDAP connect error"
 msgstr "Chyba připojování LDAP"
 
-#: src/err-codes.h:354
+#: src/err-codes.h:355
 msgid "Out of memory in LDAP"
 msgstr "Nedostatek paměti v LDAP"
 
-#: src/err-codes.h:355
+#: src/err-codes.h:356
 msgid "Bad parameter to an LDAP routine"
 msgstr "Chybná parametr ve volání LDAP"
 
-#: src/err-codes.h:356
+#: src/err-codes.h:357
 msgid "User cancelled LDAP operation"
 msgstr "Uživatel zrušil operaci LDAP"
 
-#: src/err-codes.h:357
+#: src/err-codes.h:358
 msgid "Bad LDAP search filter"
 msgstr "Chybný vyhledávací filtr LDAP"
 
-#: src/err-codes.h:358
+#: src/err-codes.h:359
 msgid "Unknown LDAP authentication method"
 msgstr "Neznámá metoda autentizace LDAP"
 
-#: src/err-codes.h:359
+#: src/err-codes.h:360
 msgid "Timeout in LDAP"
 msgstr "Čas vypršel v LDAP"
 
-#: src/err-codes.h:360
+#: src/err-codes.h:361
 msgid "LDAP decoding error"
 msgstr "Chyba dekódování LDAP"
 
-#: src/err-codes.h:361
+#: src/err-codes.h:362
 msgid "LDAP encoding error"
 msgstr "Chyba kódování do LDAP"
 
-#: src/err-codes.h:362
+#: src/err-codes.h:363
 msgid "LDAP local error"
 msgstr "Místní chyba LDAP"
 
-#: src/err-codes.h:363
+#: src/err-codes.h:364
 msgid "Cannot contact LDAP server"
 msgstr "LDAP server nelze kontaktovat"
 
-#: src/err-codes.h:364
+#: src/err-codes.h:365
 msgid "LDAP success"
 msgstr "Úspěch LDAP"
 
-#: src/err-codes.h:365
+#: src/err-codes.h:366
 msgid "LDAP operations error"
 msgstr "Chyba operací v LDAP"
 
-#: src/err-codes.h:366
+#: src/err-codes.h:367
 msgid "LDAP protocol error"
 msgstr "Chyba protokolu LDAP"
 
-#: src/err-codes.h:367
+#: src/err-codes.h:368
 msgid "Time limit exceeded in LDAP"
 msgstr "Časový limit v LDAP vypršel"
 
-#: src/err-codes.h:368
+#: src/err-codes.h:369
 msgid "Size limit exceeded in LDAP"
 msgstr "Omezení na velikost v LDAP překročeno"
 
-#: src/err-codes.h:369
+#: src/err-codes.h:370
 msgid "LDAP compare false"
 msgstr "Nepravdivé porovnání LDAP"
 
-#: src/err-codes.h:370
+#: src/err-codes.h:371
 msgid "LDAP compare true"
 msgstr "Pravdivé porovnání LDAP"
 
-#: src/err-codes.h:371
+#: src/err-codes.h:372
 msgid "LDAP authentication method not supported"
 msgstr "Autentizační metoda LDAP není podporována"
 
-#: src/err-codes.h:372
+#: src/err-codes.h:373
 msgid "Strong(er) LDAP authentication required"
 msgstr "Požadována silnější autentizace LDAP"
 
-#: src/err-codes.h:373
+#: src/err-codes.h:374
 msgid "Partial LDAP results+referral received"
 msgstr "Částečný výsledek LDAP a přijatý odkaz"
 
-#: src/err-codes.h:374
+#: src/err-codes.h:375
 msgid "LDAP referral"
 msgstr "Odkaz LDAP"
 
-#: src/err-codes.h:375
+#: src/err-codes.h:376
 msgid "Administrative LDAP limit exceeded"
 msgstr "Administrativní omezení LDAP překročeno"
 
-#: src/err-codes.h:376
+#: src/err-codes.h:377
 msgid "Critical LDAP extension is unavailable"
 msgstr "Kritické rozšíření LDAP není dostupné"
 
-#: src/err-codes.h:377
+#: src/err-codes.h:378
 msgid "Confidentiality required by LDAP"
 msgstr "LDAP vyžaduje důvěrnost"
 
-#: src/err-codes.h:378
+#: src/err-codes.h:379
 msgid "LDAP SASL bind in progress"
 msgstr "Navazuje se LDAP SASL"
 
-#: src/err-codes.h:379
+#: src/err-codes.h:380
 msgid "No such LDAP attribute"
 msgstr "Taková LDAP atribut neexistuje"
 
-#: src/err-codes.h:380
+#: src/err-codes.h:381
 msgid "Undefined LDAP attribute type"
 msgstr "Nedefinovaný druh LDAP atributu"
 
-#: src/err-codes.h:381
+#: src/err-codes.h:382
 msgid "Inappropriate matching in LDAP"
 msgstr "Nevhodné shody v LDAP"
 
-#: src/err-codes.h:382
+#: src/err-codes.h:383
 msgid "Constraint violation in LDAP"
 msgstr "Porušení omezení v LDAP"
 
-#: src/err-codes.h:383
+#: src/err-codes.h:384
 msgid "LDAP type or value exists"
 msgstr "Typ LDAP nebo hodnota existuje"
 
-#: src/err-codes.h:384
+#: src/err-codes.h:385
 msgid "Invalid syntax in LDAP"
 msgstr "Neplatná skladba v LDAP"
 
-#: src/err-codes.h:385
+#: src/err-codes.h:386
 msgid "No such LDAP object"
 msgstr "Žádný takový objekt LDAP"
 
-#: src/err-codes.h:386
+#: src/err-codes.h:387
 msgid "LDAP alias problem"
 msgstr "Problém s aliasem LDAP"
 
-#: src/err-codes.h:387
+#: src/err-codes.h:388
 msgid "Invalid DN syntax in LDAP"
 msgstr "Neplatná skladba DN v LDAP"
 
-#: src/err-codes.h:388
+#: src/err-codes.h:389
 msgid "LDAP entry is a leaf"
 msgstr "LDAP záznam je list"
 
-#: src/err-codes.h:389
+#: src/err-codes.h:390
 msgid "LDAP alias dereferencing problem"
 msgstr "Problém s vyhodnocováním odkazu LDAP"
 
-#: src/err-codes.h:390
+#: src/err-codes.h:391
 msgid "LDAP proxy authorization failure (X)"
 msgstr "Selhání autorizace LDAP proxy (X)"
 
-#: src/err-codes.h:391
+#: src/err-codes.h:392
 msgid "Inappropriate LDAP authentication"
 msgstr "Nevhodné autentizace LDAP"
 
-#: src/err-codes.h:392
+#: src/err-codes.h:393
 msgid "Invalid LDAP credentials"
 msgstr "Neplatné autentizační údaje LDAP"
 
-#: src/err-codes.h:393
+#: src/err-codes.h:394
 msgid "Insufficient access for LDAP"
 msgstr "Nedostatečná přístupová práva k LDAP"
 
-#: src/err-codes.h:394
+#: src/err-codes.h:395
 msgid "LDAP server is busy"
 msgstr "Server LDAP je zaneprázdněný"
 
-#: src/err-codes.h:395
+#: src/err-codes.h:396
 msgid "LDAP server is unavailable"
 msgstr "Server LDAP není dostupný"
 
-#: src/err-codes.h:396
+#: src/err-codes.h:397
 msgid "LDAP server is unwilling to perform"
 msgstr "Server LDAP není ochoten vyhodnotit požadavek"
 
-#: src/err-codes.h:397
+#: src/err-codes.h:398
 msgid "Loop detected by LDAP"
 msgstr "Objevena smyčka v LDAP"
 
-#: src/err-codes.h:398
+#: src/err-codes.h:399
 msgid "LDAP naming violation"
 msgstr "Narušení pojmenování v LDAP"
 
-#: src/err-codes.h:399
+#: src/err-codes.h:400
 msgid "LDAP object class violation"
 msgstr "Narušení třídy objektu LDAP"
 
-#: src/err-codes.h:400
+#: src/err-codes.h:401
 msgid "LDAP operation not allowed on non-leaf"
 msgstr "Operace LDAP není na vnitřních uzlech dovolena"
 
-#: src/err-codes.h:401
+#: src/err-codes.h:402
 msgid "LDAP operation not allowed on RDN"
 msgstr "Operace LDAP není dovolena na RDN"
 
-#: src/err-codes.h:402
+#: src/err-codes.h:403
 msgid "Already exists (LDAP)"
 msgstr "Již existuje (LDAP)"
 
-#: src/err-codes.h:403
+#: src/err-codes.h:404
 msgid "Cannot modify LDAP object class"
 msgstr "Třídu objektu LDAP nelze upravit"
 
-#: src/err-codes.h:404
+#: src/err-codes.h:405
 msgid "LDAP results too large"
 msgstr "Výsledek LDAP je příliš velký"
 
-#: src/err-codes.h:405
+#: src/err-codes.h:406
 msgid "LDAP operation affects multiple DSAs"
 msgstr "LDAP operace ovlivňuje více DSA"
 
-#: src/err-codes.h:406
+#: src/err-codes.h:407
 msgid "Virtual LDAP list view error"
 msgstr "Chyba v pohledu na virtuální seznam LDAP"
 
-#: src/err-codes.h:407
+#: src/err-codes.h:408
 msgid "Other LDAP error"
 msgstr "Jiný chyba LDAP"
 
-#: src/err-codes.h:408
+#: src/err-codes.h:409
 msgid "Resources exhausted in LCUP"
 msgstr "Zdroje vyčerpány v LCUP"
 
-#: src/err-codes.h:409
+#: src/err-codes.h:410
 msgid "Security violation in LCUP"
 msgstr "Narušení bezpečnosti v LCUP"
 
-#: src/err-codes.h:410
+#: src/err-codes.h:411
 msgid "Invalid data in LCUP"
 msgstr "Neplatná data v LCUP"
 
-#: src/err-codes.h:411
+#: src/err-codes.h:412
 msgid "Unsupported scheme in LCUP"
 msgstr "Nepodporované schéma v LCUP"
 
-#: src/err-codes.h:412
+#: src/err-codes.h:413
 msgid "Reload required in LCUP"
 msgstr "LCUP vyžaduje nové načtení"
 
-#: src/err-codes.h:413
+#: src/err-codes.h:414
 msgid "LDAP cancelled"
 msgstr "Operace LDAP zrušena"
 
-#: src/err-codes.h:414
+#: src/err-codes.h:415
 msgid "No LDAP operation to cancel"
 msgstr "Žádná operace LDAP ke zrušení"
 
-#: src/err-codes.h:415
+#: src/err-codes.h:416
 msgid "Too late to cancel LDAP"
 msgstr "Příliš pozdě na zrušení operace LDAP"
 
-#: src/err-codes.h:416
+#: src/err-codes.h:417
 msgid "Cannot cancel LDAP"
 msgstr "Operaci LDAP nelze zrušit"
 
-#: src/err-codes.h:417
+#: src/err-codes.h:418
 msgid "LDAP assertion failed"
 msgstr "Tvrzení LDAP selhalo"
 
-#: src/err-codes.h:418
+#: src/err-codes.h:419
 msgid "Proxied authorization denied by LDAP"
 msgstr "Delegovaná autorizace odmítnuta protokolem LDAP"
 
-#: src/err-codes.h:419
+#: src/err-codes.h:420
 msgid "User defined error code 1"
 msgstr "Uživatelem definovaný chybový kód 1"
 
-#: src/err-codes.h:420
+#: src/err-codes.h:421
 msgid "User defined error code 2"
 msgstr "Uživatelem definovaný chybový kód 2"
 
-#: src/err-codes.h:421
+#: src/err-codes.h:422
 msgid "User defined error code 3"
 msgstr "Uživatelem definovaný chybový kód 3"
 
-#: src/err-codes.h:422
+#: src/err-codes.h:423
 msgid "User defined error code 4"
 msgstr "Uživatelem definovaný chybový kód 4"
 
-#: src/err-codes.h:423
+#: src/err-codes.h:424
 msgid "User defined error code 5"
 msgstr "Uživatelem definovaný chybový kód 5"
 
-#: src/err-codes.h:424
+#: src/err-codes.h:425
 msgid "User defined error code 6"
 msgstr "Uživatelem definovaný chybový kód 6"
 
-#: src/err-codes.h:425
+#: src/err-codes.h:426
 msgid "User defined error code 7"
 msgstr "Uživatelem definovaný chybový kód 7"
 
-#: src/err-codes.h:426
+#: src/err-codes.h:427
 msgid "User defined error code 8"
 msgstr "Uživatelem definovaný chybový kód 8"
 
-#: src/err-codes.h:427
+#: src/err-codes.h:428
 msgid "User defined error code 9"
 msgstr "Uživatelem definovaný chybový kód 9"
 
-#: src/err-codes.h:428
+#: src/err-codes.h:429
 msgid "User defined error code 10"
 msgstr "Uživatelem definovaný chybový kód 10"
 
-#: src/err-codes.h:429
+#: src/err-codes.h:430
 msgid "User defined error code 11"
 msgstr "Uživatelem definovaný chybový kód 11"
 
-#: src/err-codes.h:430
+#: src/err-codes.h:431
 msgid "User defined error code 12"
 msgstr "Uživatelem definovaný chybový kód 12"
 
-#: src/err-codes.h:431
+#: src/err-codes.h:432
 msgid "User defined error code 13"
 msgstr "Uživatelem definovaný chybový kód 13"
 
-#: src/err-codes.h:432
+#: src/err-codes.h:433
 msgid "User defined error code 14"
 msgstr "Uživatelem definovaný chybový kód 14"
 
-#: src/err-codes.h:433
+#: src/err-codes.h:434
 msgid "User defined error code 15"
 msgstr "Uživatelem definovaný chybový kód 15"
 
-#: src/err-codes.h:434
+#: src/err-codes.h:435
 msgid "User defined error code 16"
 msgstr "Uživatelem definovaný chybový kód 16"
 
-#: src/err-codes.h:435
+#: src/err-codes.h:436
 msgid "SQL success"
 msgstr "Úspěch SQL"
 
-#: src/err-codes.h:436
+#: src/err-codes.h:437
 msgid "SQL error"
 msgstr "Chyba SQL"
 
-#: src/err-codes.h:437
+#: src/err-codes.h:438
 msgid "Internal logic error in SQL library"
 msgstr "Vnitřní chyba v knihovně SQL"
 
-#: src/err-codes.h:438
+#: src/err-codes.h:439
 msgid "Access permission denied (SQL)"
 msgstr "Přístupová práva zamítnuta (SQL)"
 
-#: src/err-codes.h:439
+#: src/err-codes.h:440
 msgid "SQL abort was requested"
 msgstr "Bylo vyžádání ukončení SQL"
 
-#: src/err-codes.h:440
+#: src/err-codes.h:441
 msgid "SQL database file is locked"
 msgstr "Soubor s databází SQL je zamknutý"
 
-#: src/err-codes.h:441
+#: src/err-codes.h:442
 msgid "An SQL table in the database is locked"
 msgstr "Tabulka SQL v databázi je zamknuta"
 
-#: src/err-codes.h:442
+#: src/err-codes.h:443
 msgid "SQL library ran out of core"
 msgstr "SQL knihovně došla paměť"
 
-#: src/err-codes.h:443
+#: src/err-codes.h:444
 msgid "Attempt to write a readonly SQL database"
 msgstr "Pokus zapsat do SQL databáze jen pro čtení"
 
-#: src/err-codes.h:444
+#: src/err-codes.h:445
 msgid "SQL operation terminated by interrupt"
 msgstr "Operace SQL ukončena přerušením"
 
-#: src/err-codes.h:445
+#: src/err-codes.h:446
 msgid "I/O error during SQL operation"
 msgstr "Vstupně-výstupní chyba během operace SQL"
 
-#: src/err-codes.h:446
+#: src/err-codes.h:447
 msgid "SQL database disk image is malformed"
 msgstr "Obraz disku databáze SQL je poškozený"
 
-#: src/err-codes.h:447
+#: src/err-codes.h:448
 msgid "Unknown opcode in SQL file control"
 msgstr "Neznámý kód operace v řízení SQL souboru"
 
-#: src/err-codes.h:448
+#: src/err-codes.h:449
 msgid "Insertion failed because SQL database is full"
 msgstr "Vložení do SQL databáze selhalo, protože je plná"
 
-#: src/err-codes.h:449
+#: src/err-codes.h:450
 msgid "Unable to open the SQL database file"
 msgstr "Soubor SQL databáze nelze otevřít"
 
-#: src/err-codes.h:450
+#: src/err-codes.h:451
 msgid "SQL database lock protocol error"
 msgstr "Chyba v zamykacím protokolu SQL databáze"
 
-#: src/err-codes.h:451
+#: src/err-codes.h:452
 msgid "(internal SQL code: empty)"
 msgstr "(vnitřní kód SQL: prázdný)"
 
-#: src/err-codes.h:452
+#: src/err-codes.h:453
 msgid "SQL database schema changed"
 msgstr "Schéma SQL databáze se změnilo"
 
-#: src/err-codes.h:453
+#: src/err-codes.h:454
 msgid "String or blob exceeds size limit (SQL)"
 msgstr "Řetězec nebo binární objekt překračuje hraniční velikost (SQL)"
 
-#: src/err-codes.h:454
+#: src/err-codes.h:455
 msgid "SQL abort due to constraint violation"
 msgstr "SQL ukončeně kvůli narušení omezení"
 
-#: src/err-codes.h:455
+#: src/err-codes.h:456
 msgid "Data type mismatch (SQL)"
 msgstr "Datový typ se neshoduje (SQL)"
 
-#: src/err-codes.h:456
+#: src/err-codes.h:457
 msgid "SQL library used incorrectly"
 msgstr "SQL knihovna byla použita nesprávně"
 
-#: src/err-codes.h:457
+#: src/err-codes.h:458
 msgid "SQL library uses unsupported OS features"
 msgstr "SQL knihovna používá nepodporované vlastnosti OS"
 
-#: src/err-codes.h:458
+#: src/err-codes.h:459
 msgid "Authorization denied (SQL)"
 msgstr "Autorizace zamítnuta (SQL)"
 
-#: src/err-codes.h:459
+#: src/err-codes.h:460
 msgid "(unused SQL code: format)"
 msgstr "(nepoužitý kód SQL: formát)"
 
-#: src/err-codes.h:460
+#: src/err-codes.h:461
 msgid "SQL bind parameter out of range"
 msgstr "Vázaný parametr SQL je mimo rozsah"
 
-#: src/err-codes.h:461
+#: src/err-codes.h:462
 msgid "File opened that is not an SQL database file"
 msgstr "Otevřený soubor není SQL databází"
 
-#: src/err-codes.h:462
+#: src/err-codes.h:463
 msgid "Notifications from SQL logger"
 msgstr "Upozornění od protokolování SQL"
 
-#: src/err-codes.h:463
+#: src/err-codes.h:464
 msgid "Warnings from SQL logger"
 msgstr "Varování od protokolování SQL"
 
-#: src/err-codes.h:464
+#: src/err-codes.h:465
 msgid "SQL has another row ready"
 msgstr "SQL již obsahuje jiný řádek"
 
-#: src/err-codes.h:465
+#: src/err-codes.h:466
 msgid "SQL has finished executing"
 msgstr "SQL dokončilo vykonávání"
 
-#: src/err-codes.h:466
+#: src/err-codes.h:467
 msgid "System error w/o errno"
 msgstr "Chyba systému bez čísla chyby (errno)"
 
-#: src/err-codes.h:467
+#: src/err-codes.h:468
 msgid "Unknown system error"
 msgstr "Neznámá chyba systému"
 
-#: src/err-codes.h:468
+#: src/err-codes.h:469
 msgid "End of file"
 msgstr "Konec souboru"
 
-#: src/err-codes.h:469
+#: src/err-codes.h:470
 msgid "Unknown error code"
 msgstr "Neznámý kód chyby"
 
@@ -1986,22 +1992,22 @@ msgstr "příkaz „%.50s“ není jednoznačný\n"
 msgid "invalid option \"%.50s\"\n"
 msgstr "neplatná volba „%.50s“\n"
 
-#: src/argparse.c:2400 src/argparse.c:2497
+#: src/argparse.c:2401 src/argparse.c:2498
 #, c-format
 msgid "Note: no default option file '%s'\n"
 msgstr "Poznámka: žádný výchozí soubor s volbami „%s“\n"
 
-#: src/argparse.c:2410 src/argparse.c:2504
+#: src/argparse.c:2411 src/argparse.c:2505
 #, c-format
 msgid "reading options from '%s'\n"
 msgstr "volby se čtou z „%s“\n"
 
-#: src/argparse.c:2489
+#: src/argparse.c:2490
 #, c-format
 msgid "option file '%s': %s\n"
 msgstr "soubor s volbami „%s“: %s\n"
 
-#: src/argparse.c:2975
+#: src/argparse.c:2976
 #, c-format
 msgid "Note: ignoring option \"--%s\" due to global config\n"
 msgstr "Poznámka: přepínač „--%s“ se ignoruje kvůli globální konfiguraci\n"
@@ -2010,7 +2016,7 @@ msgstr "Poznámka: přepínač „--%s“ se ignoruje kvůli globální konfigur
 msgid "Please report bugs to <https://bugs.gnupg.org>.\n"
 msgstr "Chyby hlaste (anglicky) na <https://bugs.gnupg.org>.\n"
 
-#: src/gpg-error.c:842
+#: src/gpg-error.c:846
 #, c-format
 msgid "warning: could not recognize %s\n"
 msgstr "pozor: %s nebylo možné rozpoznat\n"
