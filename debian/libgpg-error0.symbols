@@ -42,6 +42,7 @@ libgpg-error.so.0 libgpg-error0 #MINVER#
  gpgrt_fcancel@GPG_ERROR_1.0 1.42
  gpgrt_fclose@GPG_ERROR_1.0 1.14
  gpgrt_fclose_snatch@GPG_ERROR_1.0 1.14
+ gpgrt_fconcat@GPG_ERROR_1.0 1.58
  gpgrt_fdopen@GPG_ERROR_1.0 1.14
  gpgrt_fdopen_nc@GPG_ERROR_1.0 1.14
  gpgrt_feof@GPG_ERROR_1.0 1.14
