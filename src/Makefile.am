@@ -129,7 +129,7 @@ TESTS = gpg-error-config-test.sh
 #
 if HAVE_W32_SYSTEM
 arch_sources = w32-gettext.c w32-lock.c w32-lock-obj.h w32-thread.c \
-	       w32-iconv.c w32-estream.c w32-reg.c spawn-w32.c
+	       w32-iconv.c w32-estream.c w32-reg.c spawn-w32.c w32-utils.c
 RCCOMPILE = $(RC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
             $(libgpg_error_la_CPPFLAGS) $(AM_CPPFLAGS) $(CPPFLAGS)
 LTRCCOMPILE = $(LIBTOOL) --mode=compile --tag=RC $(RCCOMPILE)
@@ -214,7 +214,8 @@ nodist_libgpg_error_la_SOURCES = gpg-error.h
 # libgpg_error_la_DEPENDENCIES = \
 #        $(srcdir)/gpg-error.vers
 
-libgpg_error_la_CPPFLAGS = -DLOCALEDIR=\"$(localedir)\"
+libgpg_error_la_CPPFLAGS = -DLOCALEDIR=\"$(localedir)\" \
+                           -DSYSCONFDIR=\"$(sysconfdir)\"
 libgpg_error_la_LIBADD = $(gpg_error_res) $(intllibs) $(socklibs) $(LIBTHREAD)
 
 gpg_error_SOURCES = strsource-sym.c strerror-sym.c gpg-error.c

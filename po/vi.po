@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgpg-error 1.7\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2025-10-07 17:35+0200\n"
+"POT-Creation-Date: 2025-12-12 15:43+0100\n"
 "PO-Revision-Date: 2021-03-22 10:44+0100\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -2218,22 +2218,22 @@ msgstr ""
 msgid "invalid option \"%.50s\"\n"
 msgstr "Mã thao tác không hợp lệ"
 
-#: src/argparse.c:2401 src/argparse.c:2498
+#: src/argparse.c:2405 src/argparse.c:2502
 #, c-format
 msgid "Note: no default option file '%s'\n"
 msgstr ""
 
-#: src/argparse.c:2411 src/argparse.c:2505
+#: src/argparse.c:2415 src/argparse.c:2509
 #, c-format
 msgid "reading options from '%s'\n"
 msgstr ""
 
-#: src/argparse.c:2490
+#: src/argparse.c:2494
 #, c-format
 msgid "option file '%s': %s\n"
 msgstr ""
 
-#: src/argparse.c:2976
+#: src/argparse.c:2980
 #, c-format
 msgid "Note: ignoring option \"--%s\" due to global config\n"
 msgstr ""
@@ -2242,7 +2242,7 @@ msgstr ""
 msgid "Please report bugs to <https://bugs.gnupg.org>.\n"
 msgstr ""
 
-#: src/gpg-error.c:846
+#: src/gpg-error.c:892
 #, c-format
 msgid "warning: could not recognize %s\n"
 msgstr "cảnh báo : không thể nhận ra %s\n"

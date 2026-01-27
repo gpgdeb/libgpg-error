@@ -1,3 +1,94 @@
+2025-12-12  Werner Koch  <wk@gnupg.org>
+
+	Release 1.58.
+	+ commit e880193c55f0321bbefc16be3194fdbb7a48078f
+
+
+	w32: Fix a syntax error in a non-DLL build.
+	+ commit 421e101cf9760a4bc4f296d12ce25a7c3fe5b7b2
+	* src/w32-utils.c (_gpgrt_w32__init_utils): Fix syntax error.
+
+2025-12-10  Werner Koch  <wk@gnupg.org>
+
+	Release 1.57.
+	+ commit 39d7b85a7d69975f1dfec5a0add10b4d57dcfc9e
+
+
+2025-12-09  Werner Koch  <wk@gnupg.org>
+
+	argparse: gpgrt_fconcat to get the SYSCONFDIR.
+	+ commit 6fe7cf710254d78ada27fbf63747ab0e97bc6979
+	* src/stringutils.c (_gpgrt_fconcat): New internal function.
+	* src/argparse.c (_gpgrt_argparser): Use it.
+
+	New function gpgrt_fconcat.
+	+ commit 34dba88757fedb61d1ea63616a3e03837ccf50ab
+	* src/w32-utils.c: New.
+	* src/init.c (_gpg_err_init, DllMain): Call new init function.
+	* src/visibility.c (gpgrt_fconcat): New.
+	* src/gpg-error.h.in (gpgrt_fconcat): New prototype.
+	(GPGRT_FCONCAT_ABS): New.
+	(GPGRT_FCONCAT_TILDE): New.
+	(GPGRT_FCONCAT_SYSCONF): New.
+	* src/gpg-error.def.in (gpgrt_fconcat): New.
+	* src/gpg-error.vers: (gpgrt_fconcat): New.
+	* src/stringutils.c (_gpgrt_vfnameconcat): Repalce want-abs but a new
+	flags arg.  Change to support GPGRT_FCONCAT_SYSCONF.  Fix tilde
+	expansion under Windows to use CISDL_PROFILE instead of $HOME.  Adjust
+	all callers.
+
+	* src/gpg-error.c (main): New command "fconcat".
+
+2025-11-26  Daniel Cerqueira  <dan.git@lispclub.com>
+
+	po: Update Portuguese Translation.
+	+ commit a2a752fe21cce949a7b6b82bd903b46a73cce968
+
+
+2025-11-26  Werner Koch  <wk@gnupg.org>
+
+	Dynload GetThreadUILanguage to keep support for Windows XP.
+	+ commit cb7f580639cc7cc43cf279b0755e8261882b9f93
+	* src/w32-gettext.c (get_thread_ui_language): New func ptr.
+	(module_init): Initialize it.
+	(my_nl_locale_name): Use it instead of a direct call.
+
+2025-11-26  Ingo Klöcker  <dev@ingo-kloecker.de>
+
+	Use UI language instead of locale for translations.
+	+ commit 7f3e0c3942812d975fecc75b32493bb0c48b100c
+	* src/w32-gettext.c (my_nl_locale_name): Use GetThreadUILanguage instead
+	of GetThreadLocale.
+
+2025-11-19  Werner Koch  <wk@gnupg.org>
+
+	build: On zOS use pkg-config to find zoslib.
+	+ commit f090f07f1065dca26a013e173f132d39eda973c1
+	* configure.ac (EXTRA_LIBS_FOR_BUILD): Use "openedition" instead of
+	"zOS" for build tools checking.  Also chnage to use pkg-config.
+
+2025-11-19  Daniel Nylander  <po@danielnylander.se>
+
+	po: Update Swedish translation.
+	+ commit baf43baea909603ca22d8bf26661f1503566be54
+
+
+2025-11-19  NIIBE Yutaka  <gniibe@fsij.org>
+	    NIIBE Yutaka  <gniibe@fsij.org>
+
+	spawn:posix: Rename the field to ENVP to avoid a build issue.
+	+ commit 26d740f940b3cbda43e0b06a45c86f21ebc236ed
+	* src/spawn-posix.c (struct gpgrt_spawn_actions): Rename the field to
+	ENVP.
+	(my_exec, _gpgrt_spawn_actions_set_environ): Follow the change.
+
+2025-11-19  NIIBE Yutaka  <gniibe@fsij.org>
+
+	argparse: Use SYSCONFDIR for /etc.
+	+ commit a9fc729253eec88f56d810bd2a8edd327267c5b4
+	* src/Makefile.am (libgpg_error_la_CPPFLAGS): Add SYSCONFDIR.
+	* src/argparse.c (_gpgrt_argparser): Use it.
+
 2025-10-07  Werner Koch  <wk@gnupg.org>
 
 	Release 1.56.
