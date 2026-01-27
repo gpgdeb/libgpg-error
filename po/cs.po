@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgpg-error 1.42\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2025-10-07 17:35+0200\n"
+"POT-Creation-Date: 2025-12-12 15:43+0100\n"
 "PO-Revision-Date: 2021-10-15 21:07+02:00\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -1992,22 +1992,22 @@ msgstr "příkaz „%.50s“ není jednoznačný\n"
 msgid "invalid option \"%.50s\"\n"
 msgstr "neplatná volba „%.50s“\n"
 
-#: src/argparse.c:2401 src/argparse.c:2498
+#: src/argparse.c:2405 src/argparse.c:2502
 #, c-format
 msgid "Note: no default option file '%s'\n"
 msgstr "Poznámka: žádný výchozí soubor s volbami „%s“\n"
 
-#: src/argparse.c:2411 src/argparse.c:2505
+#: src/argparse.c:2415 src/argparse.c:2509
 #, c-format
 msgid "reading options from '%s'\n"
 msgstr "volby se čtou z „%s“\n"
 
-#: src/argparse.c:2490
+#: src/argparse.c:2494
 #, c-format
 msgid "option file '%s': %s\n"
 msgstr "soubor s volbami „%s“: %s\n"
 
-#: src/argparse.c:2976
+#: src/argparse.c:2980
 #, c-format
 msgid "Note: ignoring option \"--%s\" due to global config\n"
 msgstr "Poznámka: přepínač „--%s“ se ignoruje kvůli globální konfiguraci\n"
@@ -2016,7 +2016,7 @@ msgstr "Poznámka: přepínač „--%s“ se ignoruje kvůli globální konfigur
 msgid "Please report bugs to <https://bugs.gnupg.org>.\n"
 msgstr "Chyby hlaste (anglicky) na <https://bugs.gnupg.org>.\n"
 
-#: src/gpg-error.c:846
+#: src/gpg-error.c:892
 #, c-format
 msgid "warning: could not recognize %s\n"
 msgstr "pozor: %s nebylo možné rozpoznat\n"

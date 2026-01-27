@@ -1,10 +1,10 @@
 # Portuguese translation of libgpg-error.
 # Copyright (C) 2014 g10 Code GmbH
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2024, 2025 Free Software Foundation, Inc.
 # This file is distributed under the same license as the libgpg-error package.
 #
 # Current contributors:
-#  - Daniel Cerqueira <dan.git@lispclub.com>, 2024.
+#  - Daniel Cerqueira <dan.git@lispclub.com>, 2024, 2025.
 #
 # Past contributors:
 #  - paulo <paulo.jorge.tome@gmail.com>, 2014.
@@ -13,7 +13,7 @@
 #  GnuPG glossary for Portuguese translators
 #
 #   English                           |  Portuguese
-#   ----------------------------------+--------------------------------------
+#   ----------------------------------+----------------------------------
 #   cryptography                      |  cifragem
 #   encryption                        |  cifração
 #   (to) encrypt                      |  cifrar
@@ -59,14 +59,27 @@
 #   (conjugation) enter (verb)        |  introduzir
 #   usage:                            |  uso:
 #   usage                             |  utilização
+#   (to) end                          |  encerrar
+#   (to) type                         |  digitar
+#   stop                              |  interromper
+#   next                              |  próximo
+#   scroll                            |  rolar
+#   screen                            |  ecrã
+#   note:                             |  nota:
+#   note                              |  notar
+#   overlap                           |  sobreposição
+#   move                              |  mover
+#   label                             |  rotular
+#   terminate                         |  encerrar
+#   exit code                         |  código de saída
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgpg-error 1.52\n"
+"Project-Id-Version: libgpg-error 1.56\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2025-10-07 17:35+0200\n"
-"PO-Revision-Date: 2025-04-08 08:55+0200\n"
+"POT-Creation-Date: 2025-12-12 15:43+0100\n"
+"PO-Revision-Date: 2025-10-28 22:04+0000\n"
 "Last-Translator: Daniel Cerqueira <dan.git@lispclub.com>\n"
 "Language-Team: Portuguese <dan.git@lispclub.com>\n"
 "Language: pt\n"
@@ -1032,10 +1045,8 @@ msgid "Bad octal character in S-expression"
 msgstr "Caractere octal inválido na S-expression"
 
 #: src/err-codes.h:242
-#, fuzzy
-#| msgid "Unexpected tag"
 msgid "Unexpected packet"
-msgstr "Tag inesperada"
+msgstr "Pacote inesperado"
 
 #: src/err-codes.h:243
 msgid "All subkeys are expired or revoked"
@@ -2036,22 +2047,22 @@ msgstr "comando \"%.50s\" é ambíguo\n"
 msgid "invalid option \"%.50s\"\n"
 msgstr "opção inválida \"%.50s\"\n"
 
-#: src/argparse.c:2401 src/argparse.c:2498
+#: src/argparse.c:2405 src/argparse.c:2502
 #, c-format
 msgid "Note: no default option file '%s'\n"
 msgstr "Nota: nenhum ficheiro de opções pré-definido '%s'\n"
 
-#: src/argparse.c:2411 src/argparse.c:2505
+#: src/argparse.c:2415 src/argparse.c:2509
 #, c-format
 msgid "reading options from '%s'\n"
 msgstr "opções de leitura a partir de '%s'\n"
 
-#: src/argparse.c:2490
+#: src/argparse.c:2494
 #, c-format
 msgid "option file '%s': %s\n"
 msgstr "ficheiro de opções '%s': %s\n"
 
-#: src/argparse.c:2976
+#: src/argparse.c:2980
 #, c-format
 msgid "Note: ignoring option \"--%s\" due to global config\n"
 msgstr "Nota: ignorando a opção \"--%s\" devido à configuração global\n"
@@ -2060,7 +2071,7 @@ msgstr "Nota: ignorando a opção \"--%s\" devido à configuração global\n"
 msgid "Please report bugs to <https://bugs.gnupg.org>.\n"
 msgstr "Relate bugs para <https://bugs.gnupg.org>.\n"
 
-#: src/gpg-error.c:846
+#: src/gpg-error.c:892
 #, c-format
 msgid "warning: could not recognize %s\n"
 msgstr "aviso: não foi possível reconhecer %s\n"

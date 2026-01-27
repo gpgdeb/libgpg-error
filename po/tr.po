@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgpg-error\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2025-10-07 17:35+0200\n"
+"POT-Creation-Date: 2025-12-12 15:43+0100\n"
 "PO-Revision-Date: 2022-01-13 20:00+0100\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish\n"
@@ -1981,22 +1981,22 @@ msgstr "\"%.50s\" komutu belirsiz\n"
 msgid "invalid option \"%.50s\"\n"
 msgstr "Geçersiz seçenek \"%.50s\"\n"
 
-#: src/argparse.c:2401 src/argparse.c:2498
+#: src/argparse.c:2405 src/argparse.c:2502
 #, c-format
 msgid "Note: no default option file '%s'\n"
 msgstr "Not: Öntanımlı seçenek dosyası '%s' yok\n"
 
-#: src/argparse.c:2411 src/argparse.c:2505
+#: src/argparse.c:2415 src/argparse.c:2509
 #, c-format
 msgid "reading options from '%s'\n"
 msgstr "'%s' konumundan seçenekler okunuyor\n"
 
-#: src/argparse.c:2490
+#: src/argparse.c:2494
 #, c-format
 msgid "option file '%s': %s\n"
 msgstr "Seçenek dosyası '%s': %s\n"
 
-#: src/argparse.c:2976
+#: src/argparse.c:2980
 #, c-format
 msgid "Note: ignoring option \"--%s\" due to global config\n"
 msgstr "Not: Global yapılandırma dolayısıyla \"--%s\" seçeneği yok sayılıyor\n"
@@ -2005,7 +2005,7 @@ msgstr "Not: Global yapılandırma dolayısıyla \"--%s\" seçeneği yok sayıl�
 msgid "Please report bugs to <https://bugs.gnupg.org>.\n"
 msgstr "Hataları lütfen <https://bugs.gnupg.org> adresine bildirin.\n"
 
-#: src/gpg-error.c:846
+#: src/gpg-error.c:892
 #, c-format
 msgid "warning: could not recognize %s\n"
 msgstr "Uyarı: %s tanımlanamıyor\n"

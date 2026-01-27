@@ -1,3 +1,37 @@
+Noteworthy changes in version 1.58 (2025-12-12) [C41/A41/R1]
+-----------------------------------------------
+
+ * Fix building of static libraries on Windows.  [rE421e101cf9]
+
+ Release-info: https://dev.gnupg.org/T7970
+
+
+Noteworthy changes in version 1.57 (2025-12-10) [C41/A41/R0]
+-----------------------------------------------
+
+ * The sysconfdir as provided by the configure run is now used for the
+   default global config files of the argparser.  [T7894]
+
+ * New function gpgrt_fconcat and improved the existing
+   gpgrt_fnameconcat and gpgrt_absfnameconcat.  [T7894,rE34dba88757]
+
+ * On Windows use the UI language instead of the locale for
+   translations.  [T7874]
+
+ * Some minor build improvements for zOS.
+
+ * Updated the Swedish and Portuguese translations.
+
+ * Interface changes relative to the 1.56 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ gpgrt_fconcat                       NEW.
+ GPGRT_FCONCAT_ABS                   NEW.
+ GPGRT_FCONCAT_TILDE                 NEW.
+ GPGRT_FCONCAT_SYSCONF               NEW.
+
+ Release-info: https://dev.gnupg.org/T7847
+
+
 Noteworthy changes in version 1.56 (2025-10-07) [C40/A40/R0]
 -----------------------------------------------
 
