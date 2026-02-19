@@ -1,3 +1,20 @@
+Noteworthy changes in version 1.59 (2026-02-18) [C41/A41/R2]
+-----------------------------------------------
+
+ * Take care of POSIX semaphore "shared" semantics.  This fixes a
+   problem on NetBSD.  [T8065]
+
+ * Fix preparing the environment block on Windows.  [T8052]
+
+ * Fix for GPGRT_PROCESS_*_KEEP flags on Windows.  [T8052]
+
+ * Update Russian and Swedish translations.
+
+ * Introduce autogen.rc variable autogen_use_force.
+
+ Release-info: https://dev.gnupg.org/T7974
+
+
 Noteworthy changes in version 1.58 (2025-12-12) [C41/A41/R1]
 -----------------------------------------------
 
