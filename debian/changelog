@@ -1,3 +1,9 @@
+libgpg-error (1.59-1) unstable; urgency=medium
+
+  * new upstream release
+
+ -- meik michalke <meik.michalke@gnupg.com>  Thu, 19 Feb 2026 12:04:23 +0100
+
 libgpg-error (1.58-2) unstable; urgency=medium
 
   * fixed version number scheme (dropping the notion of ubuntu)
