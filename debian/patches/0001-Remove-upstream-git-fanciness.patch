@@ -15,7 +15,7 @@ beta.
 
 --- a/autogen.sh
 +++ b/autogen.sh
-@@ -259,38 +259,11 @@ if [ "$myhost" = "find-version" ]; then
+@@ -260,38 +260,11 @@ if [ "$myhost" = "find-version" ]; then
      matchexcl="--exclude $package-*beta*"
  
      beta=no
@@ -59,7 +59,7 @@ beta.
  
      echo "$package-$vers$tmp:$beta:$ingit:$vers$tmp:$vers:$tmp:$rev:$rvd:$cid:"
      exit 0
-@@ -475,50 +448,6 @@ EOF
+@@ -476,50 +449,6 @@ EOF
      die_p
  fi
  
