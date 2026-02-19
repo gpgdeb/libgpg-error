@@ -1,14 +1,13 @@
 # Russian translation for libgpg-error.
-# Copyright (C) 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the original package.
-# Ineiev <ineiev@gnu.org>, 2014, 2015, 2018, 2019, 2020, 2021, 2023
+# Ineiev <ineiev@gnu.org>, 2014, 2015, 2018, 2019, 2020, 2021, 2023, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libgpg-error\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2025-12-12 15:43+0100\n"
-"PO-Revision-Date: 2023-04-01 10:43+0100\n"
+"POT-Creation-Date: 2026-02-18 09:40+0100\n"
+"PO-Revision-Date: 2026-02-08 10:43+0100\n"
 "Last-Translator: Ineiev <ineiev@gnu.org>\n"
 "Language-Team: Russian <gnupg-ru@gnupg.org>\n"
 "Language: ru\n"
@@ -82,7 +81,7 @@ msgstr "Assuan"
 
 #: src/err-sources.h:44
 msgid "TPM2d"
-msgstr ""
+msgstr "TPM2d"
 
 #: src/err-sources.h:45
 msgid "TLS"
@@ -90,7 +89,7 @@ msgstr "TLS"
 
 #: src/err-sources.h:46
 msgid "TKD"
-msgstr ""
+msgstr "TKD"
 
 #: src/err-sources.h:47
 msgid "Any source"
@@ -973,10 +972,8 @@ msgid "Bad octal character in S-expression"
 msgstr "Плохой восьмеричный символ в S-выражении"
 
 #: src/err-codes.h:242
-#, fuzzy
-#| msgid "Unexpected tag"
 msgid "Unexpected packet"
-msgstr "Неожиданный тег"
+msgstr "Неожиданный пакет"
 
 #: src/err-codes.h:243
 msgid "All subkeys are expired or revoked"
@@ -1291,54 +1288,40 @@ msgid "Wrong name"
 msgstr "Недопустимое имя"
 
 #: src/err-codes.h:321
-#, fuzzy
-#| msgid "Not enabled"
 msgid "Not authenticated"
-msgstr "Отключено"
+msgstr "Не проведено удостоверение"
 
 #: src/err-codes.h:322
-#, fuzzy
-#| msgid "Inappropriate LDAP authentication"
 msgid "Bad authentication"
-msgstr "Неподходящее удостоверение LDAP"
+msgstr "Неподходящее удостоверение"
 
 #: src/err-codes.h:323
-#, fuzzy
-#| msgid "No agent running"
 msgid "No Keybox daemon running"
-msgstr "Агент не работает"
+msgstr "Демон щита ключей не работает"
 
 #: src/err-codes.h:324
-#, fuzzy
-#| msgid "SmartCard daemon error"
 msgid "Keybox daemon error"
 msgstr "Ошибка демона криптографических карт"
 
 #: src/err-codes.h:325
 msgid "Service is not running"
-msgstr ""
+msgstr "Служба не работает"
 
 #: src/err-codes.h:326
-#, fuzzy
-#| msgid "Keyserver error"
 msgid "Service error"
-msgstr "Ошибка сервера ключей"
+msgstr "Ошибка службы"
 
 #: src/err-codes.h:327
-#, fuzzy
-#| msgid "Bad PIN"
 msgid "Bad PUK"
-msgstr "Плохой пароль"
+msgstr "Плохой PUK"
 
 #: src/err-codes.h:328
 msgid "No reset code"
-msgstr ""
+msgstr "Нет кода сброса"
 
 #: src/err-codes.h:329
-#, fuzzy
-#| msgid "Bad secret key"
 msgid "Bad reset code"
-msgstr "Плохой секретный ключ"
+msgstr "Плохой код сброса"
 
 #: src/err-codes.h:330
 msgid "System bug detected"
@@ -1765,136 +1748,129 @@ msgid "User defined error code 16"
 msgstr "Пользовательский код ошибки 16"
 
 #: src/err-codes.h:436
-#, fuzzy
-#| msgid "LDAP success"
 msgid "SQL success"
-msgstr "Успешное выполнение LDAP"
+msgstr "Успешное выполнение SQL"
 
 #: src/err-codes.h:437
-#, fuzzy
-#| msgid "Syntax error"
 msgid "SQL error"
-msgstr "Синтаксическая ошибка"
+msgstr "Ошибка SQL"
 
 #: src/err-codes.h:438
 msgid "Internal logic error in SQL library"
-msgstr ""
+msgstr "Ошибка внутренней логики в библиотеке SQL"
 
 #: src/err-codes.h:439
 msgid "Access permission denied (SQL)"
-msgstr ""
+msgstr "Отказ в доступе (SQL)"
 
 #: src/err-codes.h:440
 msgid "SQL abort was requested"
-msgstr ""
+msgstr "Запрошена отмена операции SQL"
 
 #: src/err-codes.h:441
 msgid "SQL database file is locked"
-msgstr ""
+msgstr "База данных SQL заблокирована"
 
 #: src/err-codes.h:442
 msgid "An SQL table in the database is locked"
-msgstr ""
+msgstr "Таблица в базе данных SQL заблокирована"
 
 #: src/err-codes.h:443
 msgid "SQL library ran out of core"
-msgstr ""
+msgstr "Библиотека SQL исчерпала ресурсы"
 
 #: src/err-codes.h:444
 msgid "Attempt to write a readonly SQL database"
-msgstr ""
+msgstr "Попытка записи в базу данных SQL, доступную только для чтения"
 
 #: src/err-codes.h:445
 msgid "SQL operation terminated by interrupt"
-msgstr ""
+msgstr "Операция SQL завершена прерыванием"
 
 #: src/err-codes.h:446
 msgid "I/O error during SQL operation"
-msgstr ""
+msgstr "Ошибка ввода-вывода при операции SQL"
 
 #: src/err-codes.h:447
 msgid "SQL database disk image is malformed"
-msgstr ""
+msgstr "Образ диска базы данных SQL недоброкачествен"
 
 #: src/err-codes.h:448
 msgid "Unknown opcode in SQL file control"
-msgstr ""
+msgstr "Неизвестный код операции в файловом управлении SQL"
 
 #: src/err-codes.h:449
 msgid "Insertion failed because SQL database is full"
-msgstr ""
+msgstr "Сбой вставки из-за переполнения базы данных SQL"
 
 #: src/err-codes.h:450
 msgid "Unable to open the SQL database file"
-msgstr ""
+msgstr "Не могу открыть файл базы данных SQL"
 
 #: src/err-codes.h:451
-#, fuzzy
-#| msgid "LDAP protocol error"
 msgid "SQL database lock protocol error"
-msgstr "Ошибка протокола LDAP"
+msgstr "Ошибка протокола захвата доступа к базе данных SQL"
 
 #: src/err-codes.h:452
 msgid "(internal SQL code: empty)"
-msgstr ""
+msgstr "(внутренний код SQL: пусто)"
 
 #: src/err-codes.h:453
 msgid "SQL database schema changed"
-msgstr ""
+msgstr "Изменилась схема базы данных SQL"
 
 #: src/err-codes.h:454
 msgid "String or blob exceeds size limit (SQL)"
-msgstr ""
+msgstr "Строка или фрагмент превосходит предел размера (SQL)"
 
 #: src/err-codes.h:455
 msgid "SQL abort due to constraint violation"
-msgstr ""
+msgstr "Отмена SQL из-за нарушения ограничений"
 
 #: src/err-codes.h:456
 msgid "Data type mismatch (SQL)"
-msgstr ""
+msgstr "Несовпадение типов (SQL)"
 
 #: src/err-codes.h:457
 msgid "SQL library used incorrectly"
-msgstr ""
+msgstr "Неверное применение библиотеки SQL"
 
 #: src/err-codes.h:458
 msgid "SQL library uses unsupported OS features"
 msgstr ""
+"Операционная система не поддерживает функции, применяемые в библиотеке SQL"
 
 #: src/err-codes.h:459
-#, fuzzy
-#| msgid "Proxied authorization denied by LDAP"
 msgid "Authorization denied (SQL)"
-msgstr "LDAP отказал в опосредованной авторизации"
+msgstr "Отказ в авторизации (SQL)"
 
 #: src/err-codes.h:460
 msgid "(unused SQL code: format)"
-msgstr ""
+msgstr "(неиспользованный код SQL: format)"
 
 #: src/err-codes.h:461
 msgid "SQL bind parameter out of range"
-msgstr ""
+msgstr "Параметр связки SQL вне пределов"
 
 #: src/err-codes.h:462
 msgid "File opened that is not an SQL database file"
-msgstr ""
+msgstr "Открытый файл не является файлом базы данных SQL"
 
 #: src/err-codes.h:463
 msgid "Notifications from SQL logger"
-msgstr ""
+msgstr "Уведомления из журналирования SQL"
 
 #: src/err-codes.h:464
 msgid "Warnings from SQL logger"
-msgstr ""
+msgstr "Предупреждения из журналирования SQL"
 
 #: src/err-codes.h:465
 msgid "SQL has another row ready"
-msgstr ""
+msgstr "В SQL готов другой ряд"
 
 #: src/err-codes.h:466
 msgid "SQL has finished executing"
-msgstr ""
+msgstr "Выполнение SQL завершено"
 
 #: src/err-codes.h:467
 msgid "System error w/o errno"

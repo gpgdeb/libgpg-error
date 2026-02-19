@@ -386,15 +386,19 @@ prepare_env_block (char **r_env, const char *const *envchange)
             /* not found */;
           else
             {
+              int off0 = off;
+
               env_block_len -= (envlen[i] + 1) * sizeof (wchar_t);
               env_num--;
+              off += envlen[i] + 1;
               for (; i < env_num; i++)
                 {
-                  int off0 = off;
+                  size_t len = (envlen[i] = envlen[i+1]) + 1;
 
-                  off += envlen[i] + 1;
                   memmove (&env_block[off0], &env_block[off],
-                           ((envlen[i] = envlen[i+1]) + 1) * sizeof (wchar_t));
+                           len * sizeof (wchar_t));
+                  off0 += len;
+                  off += len;
                 }
               env_block[(env_block_len / sizeof (wchar_t)) - 1] = L'\0';
             }
@@ -739,19 +743,22 @@ _gpgrt_process_spawn (const char *pgmname, const char *argv[],
             if (si.lpAttributeList == NULL)
               {
                 if (hd_in[0] != INVALID_HANDLE_VALUE
-                    && hd_in[0] != act->hd[0])
+                    && hd_in[0] != act->hd[0]
+                    && !(flags & GPGRT_PROCESS_STDIN_KEEP))
                   CloseHandle (hd_in[0]);
                 if ((flags & GPGRT_PROCESS_STDIN_PIPE))
                   CloseHandle (hd_in[1]);
                 if ((flags & GPGRT_PROCESS_STDOUT_PIPE))
                   CloseHandle (hd_out[0]);
                 if (hd_out[1] != INVALID_HANDLE_VALUE
-                    && hd_out[1] != act->hd[1])
+                    && hd_out[1] != act->hd[1]
+                    && !(flags & GPGRT_PROCESS_STDOUT_KEEP))
                   CloseHandle (hd_out[1]);
                 if ((flags & GPGRT_PROCESS_STDERR_PIPE))
                   CloseHandle (hd_err[0]);
                 if (hd_err[1] != INVALID_HANDLE_VALUE
-                    && hd_err[1] != act->hd[2])
+                    && hd_err[1] != act->hd[2]
+                    && !(flags & GPGRT_PROCESS_STDERR_KEEP))
                   CloseHandle (hd_err[1]);
                 xfree (process);
                 xfree (cmdline);
@@ -854,17 +861,20 @@ _gpgrt_process_spawn (const char *pgmname, const char *argv[],
       else
         _gpgrt_log_info ("CreateProcess failed: ec=%d\n",
                           (int)GetLastError ());
-      if (hd_in[0] != INVALID_HANDLE_VALUE && hd_in[0] != act->hd[0])
+      if (hd_in[0] != INVALID_HANDLE_VALUE && hd_in[0] != act->hd[0]
+          && !(flags & GPGRT_PROCESS_STDIN_KEEP))
         CloseHandle (hd_in[0]);
       if ((flags & GPGRT_PROCESS_STDIN_PIPE))
         CloseHandle (hd_in[1]);
       if ((flags & GPGRT_PROCESS_STDOUT_PIPE))
         CloseHandle (hd_out[0]);
-      if (hd_out[1] != INVALID_HANDLE_VALUE && hd_out[1] != act->hd[1])
+      if (hd_out[1] != INVALID_HANDLE_VALUE && hd_out[1] != act->hd[1]
+          && !(flags & GPGRT_PROCESS_STDOUT_KEEP))
         CloseHandle (hd_out[1]);
       if ((flags & GPGRT_PROCESS_STDERR_PIPE))
         CloseHandle (hd_err[0]);
-      if (hd_err[1] != INVALID_HANDLE_VALUE && hd_err[1] != act->hd[2])
+      if (hd_err[1] != INVALID_HANDLE_VALUE && hd_err[1] != act->hd[2]
+          && !(flags & GPGRT_PROCESS_STDERR_KEEP))
         CloseHandle (hd_err[1]);
       _gpgrt_free_wchar (wpgmname);
       _gpgrt_free_wchar (wcmdline);
@@ -877,11 +887,14 @@ _gpgrt_process_spawn (const char *pgmname, const char *argv[],
   _gpgrt_free_wchar (wcmdline);
   xfree (cmdline);
 
-  if (hd_in[0] != INVALID_HANDLE_VALUE && hd_in[0] != act->hd[0])
+  if (hd_in[0] != INVALID_HANDLE_VALUE && hd_in[0] != act->hd[0]
+      && !(flags & GPGRT_PROCESS_STDIN_KEEP))
     CloseHandle (hd_in[0]);
-  if (hd_out[1] != INVALID_HANDLE_VALUE && hd_out[1] != act->hd[1])
+  if (hd_out[1] != INVALID_HANDLE_VALUE && hd_out[1] != act->hd[1]
+      && !(flags & GPGRT_PROCESS_STDOUT_KEEP))
     CloseHandle (hd_out[1]);
-  if (hd_err[1] != INVALID_HANDLE_VALUE && hd_err[1] != act->hd[2])
+  if (hd_err[1] != INVALID_HANDLE_VALUE && hd_err[1] != act->hd[2]
+      && !(flags & GPGRT_PROCESS_STDERR_KEEP))
     CloseHandle (hd_err[1]);
 
   /* log_debug ("CreateProcess ready: hProcess=%p hThread=%p" */
@@ -1159,6 +1172,9 @@ _gpgrt_process_wait (gpgrt_process_t process, int hang)
 gpg_err_code_t
 _gpgrt_process_terminate (gpgrt_process_t process)
 {
+  if (process->hProcess == INVALID_HANDLE_VALUE)
+    return 0;
+
   return process_kill (process, 1);
 }
 
@@ -1183,7 +1199,8 @@ _gpgrt_process_release (gpgrt_process_t process)
   if (process->hd_err != INVALID_HANDLE_VALUE)
     CloseHandle (process->hd_err);
 
-  CloseHandle (process->hProcess);
+  if (process->hProcess != INVALID_HANDLE_VALUE)
+    CloseHandle (process->hProcess);
   xfree (process);
 }
 

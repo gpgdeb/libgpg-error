@@ -1,3 +1,65 @@
+2026-02-18  Werner Koch  <wk@gnupg.org>
+
+	Release 1.59.
+	+ commit 3debf5485c4de18f0154ffd80726bc54e6e28a46
+
+
+2026-02-13  Ineiev  <ineiev@gnu.org>
+
+	po: Update Russian translation.
+	+ commit 57db619a0a697e494def58cf067352c4101753ca
+
+
+2026-02-04  NIIBE Yutaka  <gniibe@fsij.org>
+
+	spawn:w32: Fix with GPGRT_PROCESS_*_KEEP flags.
+	+ commit 97c0106a9a771fe015ceb5585b3c10a78663e1fd
+	* src/spawn-w32.c (_gpgrt_process_spawn): Don't close
+	the handle when GPGRT_PROCESS_*_KEEP is specified.
+
+	spawn:w32: Fix preparing the environment block.
+	+ commit ce261e592b3bb46bb0373cafd7bcd77c837a67c3
+	* src/spawn-w32.c (prepare_env_block): Copy environment
+	variables correctly by memmove.
+
+2026-02-03  NIIBE Yutaka  <gniibe@fsij.org>
+
+	spawn:posix: Take care of POSIX semaphore "shared" semantics.
+	+ commit 20c673e15bd772ee39f626f8203427b5f47601b7
+	* src/spawn-posix.c (spawn_detached): Don't call _gpgrt_post_syscall
+	on the child process.
+	(_gpgrt_process_spawn): Likewise.
+
+2026-01-15  NIIBE Yutaka  <gniibe@fsij.org>
+
+	build: Fix typos in texinfo.tex.
+	+ commit 9a68e459efdf608eddd5a043e7c7cea1d1532ac8
+	* build-aux/texinfo.tex: Fix typos.
+
+2026-01-14  NIIBE Yutaka  <gniibe@fsij.org>
+
+	m4: Fix m4 macros for strict C compiler.
+	+ commit a05a501008842c22f23aef5be3ce4ebcd138a882
+	* m4/ax_cc_for_build.m4.: Fix for no arg.
+
+	build: Remove unused build-aux/libtool.patch.
+	+ commit e0517a60eb0441fff567b86f637cb24d0f848379
+	* build-aux/libtool.patch: Remove.
+
+2026-01-09  NIIBE Yutaka  <gniibe@fsij.org>
+
+	w32:tests: Fix a test failure for tilde expansion.
+	+ commit 4a1381642740210875ac461e21ea5a53a5c67912
+	* tests/t-stringutils.c: [HAVE_W32_SYSTEM] (mygethome): Use
+	fnameconcat to get HOME, instead of the environment variable.
+
+2026-01-07  NIIBE Yutaka  <gniibe@fsij.org>
+
+	w32:spawn: Handle the case where ->hProcess has invalid handle.
+	+ commit 753f59cd2c7af7e2665729721728ce5f9f08013b
+	* src/spawn-w32.c (_gpgrt_process_terminat): Care about the case
+	it's INVALID_HANDLE_VALUE.
+
 2025-12-12  Werner Koch  <wk@gnupg.org>
 
 	Release 1.58.
