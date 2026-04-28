@@ -1,3 +1,59 @@
+2026-04-24  Werner Koch  <wk@gnupg.org>
+
+	Release 1.60.
+	+ commit def87da3272626e59bf5100840da2ab2bfa67f30
+
+
+2026-04-14  NIIBE Yutaka  <gniibe@fsij.org>
+
+	build:cross: Remove section name to dump.
+	+ commit 98660a48161adcede916c52fbef6cae6d5ccb0f0
+	* src/gen-lock-obj.sh: Don't specify section name.
+
+2026-03-25  m  <meik.michalke@gnupg.com>
+
+	autogen.sh: fixed typo.
+	+ commit a82d83194590f3fc305b88abdeebd17a45683e3d
+
+
+2026-03-17  Mikhail Filippov  <mikhail@filippov.me>
+
+	spawn:w32: Fix use-after-scope of handle array.
+	+ commit 7957a1f72005b7eeb7a3f79e6f67e232729df3db
+	* src/spawn-w32.c (_gpgrt_process_spawn): Move the hd[32] array
+	declaration from inside the inner block to the function scope, so that
+	the array remains live when CreateProcessW is called.
+
+2026-03-04  Sachin T  <sachin.t@ibm.com>
+
+	build: Revert pkg-config requirement.
+	+ commit e5a81daca8e0a8238b74ba6cb0e2738d1f60444a
+	* configure.ac: Don't use PKG_CHECK_MODULES.
+	* src/Makefile.am (mkheader): Remove EXTRA_LIBS_FOR_BUILD.
+
+2026-03-03  NIIBE Yutaka  <gniibe@fsij.org>
+
+	build: Put a work-around for AC_LIB_PROG_LD issue.
+	+ commit 158a36d23bdab83057352d6fff09618ecab2c7a3
+	* m4/libtool.m4 (AC_LIB_PROG_LD): Define here.
+
+	build: Fix m4/Makefile.am.
+	+ commit a4951fabc1e5b2d189997a5da5faf927cb18478e
+	* m4/Makefile.am: Update.
+
+	build: Add forgotten m4 file for gettext.
+	+ commit b31584791efc4938a1021f547bd930f8dffbf53a
+	* m4/intlmacosx.m4: New.
+	* m4/Makefile.am: Update.
+
+2026-02-26  NIIBE Yutaka  <gniibe@fsij.org>
+
+	w32:estream: Use INVALID_SOCKET to check invalid socket.
+	+ commit c2c60d911b0913081e4a0c0903795f9d9f49fe7b
+	* src/estream.c (IS_INVALID_SOCKET): New.
+	(func_sock_read, func_sock_write, func_sock_ioctl, func_sock_destroy):
+	Use IS_INVALID_SOCKET.
+
 2026-02-18  Werner Koch  <wk@gnupg.org>
 
 	Release 1.59.

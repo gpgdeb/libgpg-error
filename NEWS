@@ -1,3 +1,21 @@
+Noteworthy changes in version 1.60 (2026-04-24) [C42/A42/R0]
+-----------------------------------------------
+
+ * New error codes.  [T6644]
+
+ * Fix a use-after-scope of a Windows handle array.  [rE7957a1f720]
+
+ * Fix cross compiling for wasm32-unknown-emscripten. [rE98660a4816]
+
+ * Interface changes relative to the 1.57 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ GPG_ERR_PUBKEY_NON_COMPLIANT        NEW.
+ GPG_ERR_CIPHER_NON_COMPLIANT        NEW.
+ GPG_ERR_DIGEST_NON_COMPLIANT        NEW.
+
+ Release-info: https://dev.gnupg.org/T8112
+
+
 Noteworthy changes in version 1.59 (2026-02-18) [C41/A41/R2]
 -----------------------------------------------
 

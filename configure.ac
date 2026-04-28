@@ -29,7 +29,7 @@ min_automake_version="1.14"
 # See below for the LT versions.
 m4_define([mym4_package],[libgpg-error])
 m4_define([mym4_major], [1])
-m4_define([mym4_minor], [59])
+m4_define([mym4_minor], [60])
 
 # Below is m4 magic to extract and compute the revision number, the
 # decimalized short revision number, a beta version string, and a flag
@@ -51,9 +51,9 @@ AC_INIT([mym4_package],[mym4_version],[https://bugs.gnupg.org])
 #   (Interfaces added:			AGE++)
 #   (Interfaces removed:		AGE=0)
 # Note that added error codes don't constitute an interface change.
-LIBGPG_ERROR_LT_CURRENT=41
-LIBGPG_ERROR_LT_AGE=41
-LIBGPG_ERROR_LT_REVISION=2
+LIBGPG_ERROR_LT_CURRENT=42
+LIBGPG_ERROR_LT_AGE=42
+LIBGPG_ERROR_LT_REVISION=0
 ################################################
 
 AC_SUBST(LIBGPG_ERROR_LT_CURRENT)
@@ -141,24 +141,6 @@ case "${host}" in
     *)
        ;;
 esac
-
-# Set some variables for build platform helpers.
-case "$build_os" in
-    *openedition*)
-        PKG_CHECK_MODULES([ZOSLIB], [zoslib],
-                          [EXTRA_LIBS_FOR_BUILD="$ZOSLIB_LIBS"],
-                          [AC_MSG_WARN([[
-***
-*** zoslib not found.  Please ensure zoslib.pc is in PKG_CONFIG_PATH.
-*** (If you are not using zOS please ignore this warning)
-***]])])
-         ;;
-    *)
-        EXTRA_LIBS_FOR_BUILD=""
-	;;
-esac
-AC_SUBST(EXTRA_LIBS_FOR_BUILD)
-
 
 if test "$have_w32_system" != yes; then
   gl_THREADLIB_EARLY
