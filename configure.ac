@@ -29,7 +29,7 @@ min_automake_version="1.14"
 # See below for the LT versions.
 m4_define([mym4_package],[libgpg-error])
 m4_define([mym4_major], [1])
-m4_define([mym4_minor], [60])
+m4_define([mym4_minor], [61])
 
 # Below is m4 magic to extract and compute the revision number, the
 # decimalized short revision number, a beta version string, and a flag
@@ -53,7 +53,7 @@ AC_INIT([mym4_package],[mym4_version],[https://bugs.gnupg.org])
 # Note that added error codes don't constitute an interface change.
 LIBGPG_ERROR_LT_CURRENT=42
 LIBGPG_ERROR_LT_AGE=42
-LIBGPG_ERROR_LT_REVISION=0
+LIBGPG_ERROR_LT_REVISION=1
 ################################################
 
 AC_SUBST(LIBGPG_ERROR_LT_CURRENT)
@@ -261,9 +261,11 @@ AC_SUBST(INSTALLSHELLPATH)
 # the target system (POSIX or Windows).
 # AC_FUNC_FORK
 
+# Note that vasprintf is only used by the test suite; snprintf is used
+# by estream-printf.c only if available.
 AC_CHECK_FUNCS([flockfile vasprintf mmap rand strlwr stpcpy setenv stat \
                 getrlimit getpwnam getpwuid getpwnam_r getpwuid_r inet_pton \
-                getdents64 closefrom])
+                getdents64 closefrom snprintf])
 
 
 #
@@ -632,7 +634,7 @@ if test x"$gl_use_threads" = xno; then
   AC_MSG_NOTICE([generated src/lock-obj-pub.native.h for $host])
 elif test x$cross_compiling = xyes; then
   case $host in
-    *-*-gnu* | *-*-linux-gnu* | *-*-linux-musl*)
+    *-*-gnu* | *-*-linux-gnu* | *-*-linux-musl* | wasm*-*-emscripten)
     AC_CHECK_TOOL(OBJDUMP, [objdump])
     if test -n "$OBJDUMP"; then
       lock_obj_h_generated=yes

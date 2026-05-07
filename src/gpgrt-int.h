@@ -377,7 +377,7 @@ void _gpgrt_clearerr_unlocked (gpgrt_stream_t stream);
 int _gpgrt__pending (gpgrt_stream_t stream);
 int _gpgrt__pending_unlocked (gpgrt_stream_t stream);
 
-int _gpgrt_fflush (gpgrt_stream_t stream);
+int _gpgrt_fflush (gpgrt_stream_t stream, int in_atexit);
 int _gpgrt_fseek (gpgrt_stream_t stream, long int offset, int whence);
 int _gpgrt_fseeko (gpgrt_stream_t stream, gpgrt_off_t offset, int whence);
 long int _gpgrt_ftell (gpgrt_stream_t stream);
@@ -480,9 +480,11 @@ const char *_gpgrt_fname_get (gpgrt_stream_t stream);
 
 #include "estream-printf.h"
 
-/* Make sure we always use our snprintf */
+/* Make sure we always use our snprintf (except for estream-printf.c) */
+#ifndef KEEP_SYSTEM_SNPRINTF
 #undef snprintf
 #define snprintf _gpgrt_estream_snprintf
+#endif
 
 
 #if HAVE_W32_SYSTEM

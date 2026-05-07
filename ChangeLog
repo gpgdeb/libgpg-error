@@ -1,3 +1,56 @@
+2026-05-07  Werner Koch  <wk@gnupg.org>
+
+	Release 1.61.
+	+ commit 687c9da501c21a64f7dcedfa73146a4670009cea
+
+
+2026-05-03  Werner Koch  <wk@gnupg.org>
+
+	Revert "Fix possible lockup in an atexit handler"
+	+ commit ff90817a95208c407c6e5a74eeb585db3b5baff9
+	* src/estream.c (_gpgrt_fflush): Do not use the in_atexit flag.
+
+2026-04-30  Werner Koch  <wk@gnupg.org>
+
+	Fix possible lockup in an atexit handler.
+	+ commit 50f0c56bdd36f7f709a62503942ac55399dafb9c
+	* src/estream.c (_gpgrt_fflush): Add arg in_atexit and skip the flush in
+	  this mode if the lock can not be taken.  Change all callers.
+
+2026-04-29  Werner Koch  <wk@gnupg.org>
+
+	Fix possible stack overflow in es_printf for %.100f format.
+	+ commit f7ded3ce666ca8e27226dfa05b1e6b8636728441
+	* configure.ac: Add test for snprintf.
+	* src/gpgrt-int.h: Do not re-map snprintf if KEEP_SYSTEM_SNPRINTF is
+	  defined.
+	* src/estream-printf.c (KEEP_SYSTEM_SNPRINTF): Define.
+	  (pr_float): Increase static buffer size.  Use snprintf for long
+	  double.
+
+	* tests/t-printf.c: Include float.h.
+	(check_large_float): New.
+
+2026-04-28  Werner Koch  <wk@gnupg.org>
+
+	Fix out-of-bounds read in vfnameconcat.
+	+ commit 48fae7f604398035ab8cb9970301667312231471
+	* src/stringutils.c (_gpgrt_vfnameconcat): Use the correct value for
+	  the trailing slash check.
+
+2026-04-27  Jakub Bogusz  <qboosh@pld-linux.org>
+
+	po: update Polish translation.
+	+ commit e1762f6de18740e62729625bf47c772532095757
+
+
+2026-04-27  NIIBE Yutaka  <gniibe@fsij.org>
+
+	build: Add cross compile support for wasm*-*-emscripten target.
+	+ commit 15ccba67c50fdb3db93ba0162e4cedc47921c2f8
+	* configure.ac: Add wasm*-*-emscripten target to generate
+	lock-obj-pub.native.h.
+
 2026-04-24  Werner Koch  <wk@gnupg.org>
 
 	Release 1.60.
